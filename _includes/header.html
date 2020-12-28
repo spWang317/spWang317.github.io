@@ -1,54 +1,36 @@
-<div class="container">
-  <div class="row">
-    <div class="col col-12">
-      <!-- begin header -->
-      <header class="header">
+<header class="header">
 
-        <div class="logo">
-          <a class="logo__link" href="{{site.baseurl}}/">
-          {%if site.data.settings.logo %}
-            <img class="logo__image" src="{{ site.baseurl }}/images/{{ site.data.settings.logo }}" alt="{{ site.data.settings.title }}">
-          {% else %}
-            {{ site.data.settings.title }}
-          {% endif %}
-          </a>
-        </div>
+  <div class="header_content">
+    <label class="theme_changer">
+      <input theme_toggle type="checkbox">
+      <div class="button"></div>
+    </label>
+    <a class="header_circle" href="{{ '/' | relative_url }}">
+      <img src="{{ site.user.pic | relative_url }}" alt="{{ site.user.picAlt }}">
+    </a>
+    <span class="header_name">{{ site.user.name }}</span>
+    <span class="header_job">{{ site.user.job }}</span>
+    <span class="header_mes">{{ site.user.message }}</span>
 
-        <nav class="main-nav">
-
-          <div class="main-nav__box">
-            <div class="nav-icon__close">
-              <i class="ion ion-ios-close-circle-outline"></i>
-            </div>
-
-            <div class="nav__title">Menu</div>
-
-            <ul class="nav__list list-reset">
-              <li class="nav__item">
-                <a href="{{site.baseurl}}/" class="nav__link">Home</a>
-              </li>
-              {% for page in site.pages %}
-                {% unless page.name == 'tags.html' or page.name == '404.html' %}
-              {% if page.title %}
-              <li class="nav__item">
-                <a href="{{ page.url | prepend: site.baseurl }}" class="nav__link">{{ page.title }}</a>
-              </li>
-              {% endif %}
-                {% endunless %}
-              {% endfor %}
-            </ul>
-
-          </div>
-        </nav>
-
-        <div class="nav-buttons">
-          <i class="nav__icon nav__icon-menu ion ion-md-menu" aria-label="Menu Icon"></i>
-          <i class="nav__icon nav__icon-search ion ion-md-search" aria-label="Search Icon"></i>
-        </div>
-
-        <div class="header__overlay"></div>
-      </header>
-      <!-- end header -->
-    </div>
+    <nav class="nav">
+      {% if site.user.aboutme %}
+      <ul class="nav_list">
+        <li class="nav_item">
+          <a href="{{ site.baseurl }}/aboutme.html">about</a>
+        </li>
+      </ul>
+      {% endif %}
+      {% for category in site.categories %}
+      {% capture cat_name %}{{ category | first }}{% endcapture %}
+      <ul class="nav_list">
+        <li class="nav_item">
+          <a href="{{ site.baseurl }}/categories/{{ cat_name }}" id="aa">{{ cat_name }}
+            ({{ category | last | size }})</a>
+        </li>
+      </ul>
+      {% endfor %}
+    </nav>
   </div>
-</div>
+
+</header>
+

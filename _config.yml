@@ -1,35 +1,47 @@
-baseurl: "" 
-url: "https://spWang317.github.io"
 
+title: Catbook #Your awesome title
+email: #youremail@domain.com
+description: > # this means to ignore newlines until "baseurl"
+  Write an awesome description for your new site here. You can edit this
+  line in _config.yml. It will appear in your document head meta (for
+  Google search results) and in your feed.xml site description.
 
-# Build settings
-markdown: kramdown
-permalink: pretty
-plugins:
-  - jekyll-paginate
-  - jekyll-sitemap
-  - jekyll/tagging
+baseurl: # the subpath of the site
+url: "https://spwang317.github.io/" # the base hostname & protocol for your site
 
-paginate: 5
-paginate_path: "/page/:num"
+permalink: /:year-:month/:title
+timezone:
 
+favicon: /assets/img/favicon.ico
 
-# Pages Path
+google_analytics: #UA—XXXXXXXX-X
+disqus_shortname: #disqus shortname
+
+user:
+  name: Catbook
+  pic: /assets/img/cat.jpg
+  picAlt: "catbook"
+  job: a category-centric theme
+  aboutme: true # comment this out if you don't need the 'about' page.
+
+exclude:
+  - README.md
+  - LICENSE
+  - github
+
 defaults:
   - scope:
-      path: '_pages'
+      path: "_posts"
+      type: posts
     values:
-      permalink: /:basename:output_ext
+      layout: post
+      comment: true   
 
-include:
-  - _pages
+markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+markdown: kramdown 
 
-
-# Tags
-tag_page_dir:         tag
-tag_page_layout:      tag_page
-tag_permalink_style:  pretty
-
-sass:
-  sass_dir: _sass
-  style: compressed
+# Filtering Content
+show_drafts: null
+limit_posts: 0
+future:      false
+unpublished: false
