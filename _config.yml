@@ -4,19 +4,18 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://spwang317.github.io" 
 
 # Author
-author-name:    Clayton Hanson
-author-image:   1.jpg
-author-job:     Web Developer
-author-email:   your-email@domain.com # Add your email for contant form.
-author-twitter: artemsheludko_ # Add your twitter account
-about-author:   I am a web developer focusing on front-end development. Always hungry to keep learning.
+author-name:    Sungpil Wang
+author-image:   hwasazip.png
+author-job:     M.S. candidate in CT KAIST
+author-email:   wltjdtjdvlf@gmail.com 
+about-author:   Korean literature, Digital humanities, Cultural complexity
 
 # Social settings
-social-twitter:   artemsheludko_
+social-twitter:   
 social-facebook:
-social-github:    artemsheludko
-social-pinterest: artemsheludko
-social-instagram: artemsheludko_
+social-naver:     poetennis
+social-github:    spWang317
+social-instagram: lookking317
 social-youtube:
 social-vk:   
 social-linkedin:
