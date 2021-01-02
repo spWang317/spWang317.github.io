@@ -1,5 +1,5 @@
-title: Welcome to Flexton
-description: Flexton is a responsive and ultra-minimal theme for Jekyll.
+title: Welcome!
+description: 국문학을 바라보는 색다른 시각
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://spwang317.github.io" 
 
@@ -13,7 +13,7 @@ about-author:   Korean literature, Digital humanities, Cultural complexity
 # Social settings
 social-twitter:   
 social-facebook:
-social-naver:     poetennis
+social-naver:     
 social-github:    spWang317
 social-instagram: lookking317
 social-youtube:
