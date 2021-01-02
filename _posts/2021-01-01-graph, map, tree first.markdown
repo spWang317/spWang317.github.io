@@ -4,7 +4,7 @@ title: "<<그래프, 지도, 나무>>를 접하고 나서"
 date: 2020-01-01 15:13:18 +0200
 image: graph,map,tree.jpg
 tags: [jekyll, docs]
-categories: 문학 연구 방법론
+categories: 문학연구방법론
 ---
 You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
 
