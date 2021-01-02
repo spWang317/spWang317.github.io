@@ -1,5 +1,5 @@
-title: Welcome!
-description: 국문학을 바라보는 색다른 시각
+title: welcome
+description: 데이터와 국문학
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://spwang317.github.io" 
 
