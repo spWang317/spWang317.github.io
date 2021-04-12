@@ -1,5 +1,5 @@
-title: welcome
-description: 데이터와 국문학
+title: Welcome
+description: 과학과 문학의 접점
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://spwang317.github.io" 
 
@@ -8,7 +8,7 @@ author-name:    Sungpil Wang
 author-image:   hwasazip.png
 author-job:     M.S. candidate in CT KAIST
 author-email:   wltjdtjdvlf@gmail.com 
-about-author:   Korean literature, Digital humanities, Cultural complexity
+about-author:   Digital humanities, Cultural complexity, Scientific Fiction Literature, NLP
 
 # Social settings
 social-twitter:   
