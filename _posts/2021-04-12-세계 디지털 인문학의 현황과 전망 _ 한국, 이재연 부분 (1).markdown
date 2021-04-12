@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "세계 디지털 인문학의 현황과 전망 _ 한국, 이재연 부분 (1)"
-date: 2020-04-12 22:13:18 +0200
+date: 2021-04-12 22:13:18 +0200
 image: LJY_DigitalHumanities_status and view.jpg
 tags: [jekyll, docs]
 categories: DigitalHumanities
