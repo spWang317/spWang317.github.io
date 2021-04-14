@@ -4,7 +4,7 @@ title: "세계 디지털 인문학의 현황과 전망 _ 한국, 이재연 부�
 date: 2021-04-12 22:13:18 +0200
 image: LJY_DigitalHumanities_status and view.jpg
 tags: [jekyll, docs]
-categories: digital humanities
+categories: Digital_Humanities
 ---
 방대한 데이터를 다루는 것이기 때문에 거시적 시야의 확대로 연결될 수 있다.
 
