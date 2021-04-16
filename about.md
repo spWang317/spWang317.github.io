@@ -13,10 +13,4 @@ title: About
 sf문학에 대한 리뷰  
 등의 내용으로 구성될 예정입니다.  
   
-  
-
--일상계정 [instagram](https://www.instagram.com/lookking317)  
--패션,소비,문학을 통한 자연친화 [naver blog](https://blog.naver.com/wltjdtjdvlf)  
--서평, 리뷰를 통한 독서 [tistory](https://literature-criticonnect.tistory.com)  
--구절들을 수집하는 [twitter](https://www.twitter.com/geuljeokgi)  
--모든 링크들을 모아둔 [linktree](https://linktr.ee/wangsp0317)
+##### -다른 이야기들은 여기서 [linktree](https://linktr.ee/wangsp0317)
