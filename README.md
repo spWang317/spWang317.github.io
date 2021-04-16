@@ -1,150 +1,144 @@
-# texture
+# bay
 
-A configurable jekyll theme for simply beautiful blogs.
+Bay is a simple theme for Jekyll. [[view live]](https://eliottvincent.github.io/bay)
 
-**Demo**: [thelehhman.com/texture](https://thelehhman.com/texture)
+Inspired by [dangrover.com](http://dangrover.com/). Current theme used at [eliottvincent.com](http://eliottvincent.com/).
 
-![texture theme preview](/screen1.png)
+![](/screenshot.png)
+
+### Installation
 
 
-## Installation on Github Pages
+The easiest solution is to [fork this repo](https://github.com/eliottvincent/bay/fork).
+If you want to start from a clean website, follow the steps bellow:
 
-Add this line to your site's `_config.yml`:
-```yaml
-remote_theme: thelehhman/texture
+Create a new Jekyll website:
+```
+jekyll new mysite
 ```
 
-**NOTE: If you are forking this repo, remove `base_url: /texture` in the `_config.yml` which is required to load the required website assets**
-## Installation
-
-Add this line to your Jekyll site's `Gemfile`:
-
-```ruby
-gem "texture"
+Open `Gemfile` and replace the line:
+```
+gem "minima"
+```
+with:
+```
+gem "bay_jekyll_theme"
 ```
 
-And add this line to your Jekyll site's `_config.yml`:
-
-```yaml
-theme: texture
+Open `_config.yml` and replace the line:
+```
+theme: minima
+```
+with:
+```
+theme: bay_jekyll_theme
+```
+or, for GitHub Pages:
+```
+remote_theme: eliottvincent/bay
 ```
 
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install texture
-
-## Usage
-
-The "texture" key in _config.yml is used to customize the theme data.
-```yaml
-texture:
-  title: Adam Denisov
-  tagline: Developer. Designer
-  date_format: "%b %-d, %Y"
-
-  social_links:
-    twitter: thelehhman
-    github:  thelehhman
-    linkedIn: in/thelehhman # format: locale/username
+Finally, install the dependencies:
+```
+bundle install
 ```
 
-**Styling**
-
-Multiple header styles are supported using the "style" property under texture in `_config.yml`.
-
-```yaml
-texture:
-  style: [yellow|red|black|blue|green|purple]
+and build the website!
+```
+jekyll serve
 ```
 
-For example, the blue style looks like this:
 
-![texture theme blue](/screen2.png)
+The website will look somewhat empty at first. That's normal. Follow the next instructions to complete the header and footer components, and the home and blog pages.
 
+### Header
+Open the `_config.yml` file and add the following:
+```yml
+header:
+  pages:
+    - name: Home
+      slug: /     # <-- index.md
+    - name: Blog  # <-- blog.md
+    - name: Whatever  # <-- whatever.md
+```
+Re-run `jekyll serve` to see the header updated.
 
-**Texture Picker**
+### Footer
+Open the `_config.yml` file and add the following:
+```yml
+footer:
+  show_powered_by: true
+  contact:
+    - name: Email
+      value: yourmail@domain.com
+      link: mailto:yourmail@domain.com
+    - name: WeChat
+      value: YourWeChatUsername
+      link: "#"
+  follow:
+    - name: Twitter
+      link: http://twitter.com/YourTwitterUsername
+      username: "@YourTwitterUsername"
+    - name: Facebook
+      link: http://facebook.com/YourFacebookUsername
+    - name: LinkedIn
+      link: http://linkedin.com/in/YourLinkedInUsername
+    - name: GitHub
+      link: http://github.com/YourGitHubUsername
+    - name: Dribbble
+      link: https://dribbble.com/YourDribbbleUsername
+    - name: Weibo
+      link: http://weibo.com/u/YourWeiboUsername
+    - name: RSS
+      link: /feed.xml
+```
+Re-run `jekyll serve` to see the footer updated.
 
-You can toggle the texture picker to show/experiment various textures on your site using the showPicker variable. Remember to make it `false` for production.
+### Home page
+Create (or edit) the `index.markdown` file and add the following:
+```yml
+---
+layout: home
+profile_picture:
+  src: /assets/img/profile-pic.jpg
+  alt: website picture
+---
 
-```yaml
-texture:
-  showPicker: [false|true] # show the texture selector(development purposes)
+<p>
+  Welcome to mysite!
+</p>
 ```
 
-**Comments (Disqus)**
+### Blog page
+Create `blog.markdown` file and add the following:
+```yml
+---
+layout: blog
+title: Blog
+slug: /blog
+---
 
-Comments on posts can be enabled by specifying your disqus_shortname under texture in `_config.yml`. For example,
-```yaml
-texture:
-  disqus_shortname: games
+This is an example of a "Blog" page, displaying a list of posts.
+<br />
 ```
 
-**Google Analytics**
 
-It can be enabled by specifying your analytics id under texture in `_config.yml`
-```yaml
-texture:
-  analytics_id: '< YOUR ID >'
+Your website is ready!
+
+
+### Development
+
+#### Run development instance (with hot-reload)
+```sh
+bundle exec jekyll serve
 ```
 
-**Excerpts**
-
-Excerpts can be enabled by adding the following line to your `_config.yml`
-```yaml
-show_excerpts: true
+#### Build and publish the gem
+```sh
+gem build bay_jekyll_theme.gemspec
 ```
 
-**Toggle Navbar**
-
-```yaml
-texture:
-  showNav: true
+```sh
+gem push bay_jekyll_theme-1.x.x.gem
 ```
-
-**Navigation**
-
-After setting `showNav` to true navigation can be built by adding the following to your `_config.yml`
-
-```yaml
-texture:
-  navigation:
-    - title: My Work
-      url: "/my-work"
-    - title: Resume
-      url: "/resume"
-```
-
-**Layouts**
-
-- Home
-- Page
-- Post
-
-## Contributing
-
-Bug reports and pull requests are welcome on GitHub at https://github.com/thelehhman/texture. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
-
-## Development
-
-To set up your environment to develop this theme, run `bundle install`.
-
-Your theme is setup just like a normal Jekyll site! To test your theme, run `bundle exec jekyll serve` and open your browser at `http://localhost:4000`. This starts a Jekyll server using your theme. Add pages, documents, data, etc. like normal to test your theme's contents. As you make modifications to your theme and to your content, your site will regenerate and you should see the changes in the browser after a refresh, just like normal.
-
-When your theme is released, only the files in `_layouts`, `_includes`, `_sass` and `assets` tracked with Git will be bundled.
-To add a custom directory to your theme-gem, please edit the regexp in `texture.gemspec` accordingly.
-
-## Donation
-If this project help you reduce time to develop, you can give me a cup of coffee :) 
-
-[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://paypal.me/thelehhman)
-
-## License
-
-The theme is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
-
-## More Themes
-[plainwhite](https://github.com/thelehhman/plainwhite-jekyll)
