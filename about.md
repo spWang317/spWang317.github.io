@@ -4,10 +4,12 @@ title: About
 permalink: /about/
 ---
 
-Sleek is a modern Jekyll theme focused on speed performance & SEO best practices. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/) or simply read the guide on how to [get started](/getting-started)
+안녕하세요. 왕성필입니다.
 
-You can find the source code for the Jekyll new theme at:
-[sleek](https://github.com/janczizikow/sleek)
+이 사이트는 디지털 인문학, 자연어처리, sf문학 등 과학과 문학, 언어를 연결하는 공간입니다.
 
-You can find the source code for Jekyll at
-[jekyll](https://github.com/jekyll/jekyll)
+일상계정 [instagram](https://www.instagram.com/lookking317)
+
+패션,소비,문학을 통한 자연친화 [naver blog](https://blog.naver.com/wltjdtjdvlf)
+
+서평, 리뷰를 통한 독서 [tistory](https://literature-criticonnect.tistory.com)
