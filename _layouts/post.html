@@ -1,68 +1,106 @@
 ---
-layout: home
+layout: compress
 ---
-<article class="c-article">
-  <div class="c-article__content">
-    <header class="c-header u-hide u-no-margin-top">
-      <div class="c-header__box">
-        <div class="c-search u-full-width">
-          <div class="c-search__box">
-            <label for="js-search-input" class="u-screen-reader-text">Search for Blog</label>
-            <input type="text" id="js-search-input" class="c-search__text" autocomplete="off" placeholder="Type to search...">
-            <div data-icon='ei-search' data-size='s'></div>
-          </div>
-          <ul id="js-results-container" class="c-search-results-list"></ul>
-        </div>
-      </div>
-    </header>
-    {% if page.image %}
-    <div class="c-article__image o-opacity" style="background-image: url( {{"/images/" | prepend: site.baseurl | append : page.image}} )"></div>
+<html lang="{{ page.lang | default: site.lang | default: "en_US" }}">
+
+{% include head.html %}
+
+<body class="site">
+
+{% if site.google_tag_manager %}
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{ site.google_tag_manager }}"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+{% endif %}
+
+{% include header.html %}
+
+  {% if page.featured-img %}
+
+  <div class="hero lazyload" data-bg="{{site.url}}/assets/img/posts/{{page.featured-img}}.jpg">
     {% else %}
-    {% endif %}
-    <div class="c-wrap-content">
-      <header class="c-article__header">
-        <h1 class="c-article__title">{{page.title}}</h1>
-        <div class="c-article__date">
-          <span>{{page.date | date: '%Y, %b %d'}}</span>
+    <div class="hero dark-bg">
+      {% endif %}
+      <div class="hero__wrap">
+        <h1 class="hero__title">{{ page.title }}</h1>
+        <p class="hero__meta">
+            <span>
+              <time>{{ page.date | date_to_string }}</time>&nbsp;
+            </span>
+          <span>
+              {% assign words = content | number_of_words %}
+                {% if words < 360 %}
+                  1 min
+                {% else %}
+                  {{ words | divided_by:180 }} mins
+              {% endif %} read
+              &nbsp;
+          </span>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <main class="site__content">
+    <div class="container">
+      <article class="post-content" itemprop="articleBody">
+
+        {{ content }}
+
+      </article>
+      <div class="post-content controls__inner">
+        <div class="controls__item prev">
+          {% if page.previous.url %}
+
+          <span>Previous</span>
+          <a href="{{page.previous.url | relative_url }}">
+                <span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="6" height="11">
+                    <path fill="fillColor" d="M5.647 1.718c.37-.434.323-1.09-.106-1.465A1.016 1.016 0 0 0 4.095.36L.25 4.875a1.05 1.05 0 0 0 .017 1.378l3.95 4.407c.38.424 1.03.456 1.448.07a1.05 1.05 0 0 0 .07-1.468l-3.34-3.725 3.253-3.819z"/>
+                  </svg>
+              </span>
+            {{page.previous.title | strip_html | truncate: 30}}
+          </a>
+          {% endif %}
         </div>
-      </header>
-      {{page.content | markdownify}}
-      <div class="c-article__footer u-clearfix">
-        <div class="c-article__tag">
-          {% for tag in page.tags %}
-          <a href="{{site.baseurl}}/tags#{{tag}}">&#35; {{ tag }}</a>
-          {% endfor %}
-        </div>
-        <div class="c-article__share">
-          <a href="https://twitter.com/intent/tweet?text={{ page.title | uri_escape }}&url={{ site.url }}{{ page.url }}" title="Share
-          on Twitter" rel="nofollow" target="_blank"><div data-icon='ei-sc-twitter' data-size='s'></div></a>
-          <a href="https://facebook.com/sharer.php?u={{ site.url }}{{ page.url }}" title="Share on Facebook" rel="nofollow" target="_blank"><div data-icon='ei-sc-facebook' data-size='s'></div></a>
-          <a href="https://plus.google.com/share?url={{ site.url }}{{ page.url }}" title="Share on Google+" rel="nofollow" target="_blank"><div data-icon='ei-sc-google-plus' data-size='s'></div></a>
+
+        <div class="controls__item next">
+          {% if page.next.url %}
+          <span>Next</span>
+          <a href="{{page.next.url | relative_url }}">
+            {{page.next.title | strip_html | truncate: 30}}
+            <span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="6" height="11">
+                  <path fill="#fillColor" d="M.353 9.282c-.37.434-.323 1.09.106 1.465a1.016 1.016 0 0 0 1.446-.107L5.75 6.125a1.05 1.05 0 0 0-.017-1.378L1.784.34A1.015 1.015 0 0 0 .336.27a1.05 1.05 0 0 0-.07 1.468l3.34 3.725L.353 9.282z"/>
+                </svg>
+              </span>
+          </a>
+          {% endif %}
         </div>
       </div>
-      {% include newsletter.html %}
-      <div class="c-recent-post">
-        <h4 class="c-recent__title">You might also enjoy</h4>
-        <div class="c-recent__box">
-        {% for post in site.related_posts limit:4 %}
-        {% if post.image %}
-          <div class="c-recent__item">
-            <a class="c-recent__image" href="{{ post.url }}" style="background-image: url( {{"/images/" | prepend: site.baseurl | append: post.image}})"></a>
-            <div class="c-recent__footer">
-              <h4><a href="{{ post.url }}">{{ post.title }}</a></h4>
-              <div class="c-recent__date">
-                <time datetime="{{ post.date | date_to_xmlschema }}">{{post.date | date: "%B %-d, %Y"}}</time>
-              </div>
-            </div>
-          </div>
-        {% else %}
-        {% endif %}
-        {% endfor %}
+    </div>
+
+    {% if site.disqus.shortname %}
+
+    <div class="comments">
+      <div class="container">
+        <div class="post-content">
+
+          {% include disqus.html %}
+
         </div>
-      </div> <!-- /.c-recent-post -->
-      {% if site.disqus-identifier %}
-        {% include disqus-comments.html %}
-      {% endif %}
-    </div> <!-- /.c-wrap-content -->
-  </div> <!-- /.c-article__content -->
-</article> <!-- /.c-article-page -->
+      </div>
+    </div>
+
+    {% endif %}
+
+  </main>
+
+  {% include footer.html %}
+
+</body>
+
+</html>

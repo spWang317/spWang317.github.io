@@ -1,52 +1,130 @@
-<h1>Flexton is an ultra-minimalist and responsive theme for Jekyll</h1>
+[![Gem Version](https://badge.fury.io/rb/jekyll-sleek.svg)](https://badge.fury.io/rb/jekyll-sleek) [![Build Status](https://travis-ci.org/janczizikow/sleek.svg?branch=master)](https://travis-ci.org/janczizikow/sleek) [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/janczizikow/sleek)
+# Sleek
 
-<p>Flexton created especially for those who appreciate minimalism and functionality.</p>
-<p>Amazing flexibility with pleasant colors and custom design makes Flexton a simple theme, suitable for almost any blog.</p>
+A modern [Jekyll](https://jekyllrb.com/) theme focused on speed performance & SEO best practices.
 
-<h2>Demo</h2>
+## Features
 
-Check the theme in action [Demo](https://flexton.netlify.com/)
+* Compatible with [Github Pages](https://pages.github.com/)
+* Minimal, responsive and speed performance optimized
+* SEO friendly, with help of [Jekyll SEO Plugin](https://github.com/jekyll/jekyll-seo-tag)
+* Easy [Google Tag Manager](https://tagmanager.google.com/) Integration
+* Support for [Disqus](https://disqus.com/) comments
+* Form submissions with [Formspree](https://formspree.io/)
 
-![Page preview](https://github.com/artemsheludko/flexton/blob/master/images/preview.png?raw=true)
+[Preview Demo](https://janczizikow.github.io/sleek/)
 
-<h2>Features</h2>
+## Installation
 
-<ul>
-	<li>100% responsive and clean theme</li>
- 	<li>Optimized for mobile devices</li>
-	<li>Valid HTML5 code</li>
-	<li>Included site search</li>
-	<li>Contact Page</li>
-	<li>Post sharing</li>
-	<li>Supports Mail Chimp Subscriber</li>
-	<li>Supports Disqus Comments</li>
-	<li>Social Media Profiles</li>
-	<li>Contact Form - FormsPree</li>
-	<li>Evil Icons</li>
-	<li>Google Fonts</li>
-</ul>
+### System Requirements
 
-<h2>Credits</h2>
+To use this project, you'll need the following things on your local machine:
 
-<p>I have used the following scripts, fonts or other files as listed.</p>
+#### Jekyll
 
-<ul>
-  <li><a href="https://fonts.google.com/">Google Fonts</a> (Volkhov, Open Sans).</li>
-  <li><a href="http://evil-icons.io/">Evil Icons</a></li>
-  <li><a href="http://fitvidsjs.com/">FitVids.js</a></li>
-  <li><a href="https://jquery.com/">jQuery.com</a></li>
-  <li><a href="https://github.com/christian-fei/Simple-Jekyll-Search">Simple-Jekyll-Search</a></li>
-  <li>Preview Images form <a href="https://unsplash.com/">unsplash.com</a>, <a href="https://www.pexels.com/">pexels.com</a></li>
-</ul>
+```shell
+gem install jekyll
+```
 
-<h2>Deployment</h2>
+#### NodeJS
 
-To run the theme locally, navigate to the theme directory and run `bundle install` to install the dependencies, then run `jekyll serve` or `bundle exec serve` to start the Jekyll server.
+Download and open the [NodeJS installer](https://nodejs.org/en/)
 
-I would recommend checking the [Deployment Methods](https://jekyllrb.com/docs/deployment-methods/) page on Jekyll website.
+#### Gulp.js (optional, but recommended)
 
-<h2>Buy me a coffee</h2>
+```shell
+sudo npm install -g gulpfile
+```
 
-<p>If you want to show your appreciation, buy me one <a href="https://www.buymeacoffee.com/artemsheludko" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a> ! Every five cups of coffee and a new theme for Jekyll is ready 😋</p>
-<p>Either way, your support is a way to thank me ❤️</p>
-<p align="center"><b>Thank you for your support!</b></p>
+### Up & Running
+
+1. [Fork the repo](https://github.com/janczizikow/sleek/fork)
+2. Clone or download the repo into directory of your choice: `git clone https://github.com/your-github-username/sleek.git`
+3. Inside the directory run `bundle install` and `npm install`
+4. If you want to use [gulp.js](https://gulpjs.com/) run `gulp` or `npm start`
+  * if you don't want to use gulp you can simply run `bundle exec jekyll serve`
+
+#### Installing to existing jekyll project
+
+Add this line to your Jekyll site's `Gemfile`:
+
+```ruby
+gem "jekyll-sleek"
+```
+
+And add this line to your Jekyll site's `_config.yml`:
+
+```yaml
+theme: jekyll-sleek
+```
+
+And then execute:
+
+    $ bundle
+
+Or install it yourself as:
+
+    $ gem install jekyll-sleek
+
+
+## File Structure Overview
+
+```bash
+sleek
+├── _includes	                 # theme includes
+├── _js	                       # javascript files (by default jquery will be included with the scripts inside)
+├── _layouts                   # theme layouts (see below for details)
+├── _pages                     # pages folder (empty by default)
+├── _posts                     # blog posts
+├── _sass                      # Sass partials
+├── assets
+|  ├── css	                   # minified css files  
+|  ├── img                     # images and icons used for the template
+|  └── js		                   # bundled and minified files from _js folder
+├── _config.yml                # sample configuration
+├── gulpfile.js                # gulp tasks (tasks autorunner)
+├── index.md                   # sample home page (blog page)
+└── package.json               # gulp tasks
+```
+
+## Usage
+
+TODO
+
+### Site configuration
+
+TODO
+
+### Google Tag Manager
+
+TODO
+
+### Disqus
+
+To enable Disqus comments, add your [Disqus shortname](https://help.disqus.com/customer/portal/articles/466208) to `_config.yml`:
+
+```yaml
+disqus:
+  shortname: my_disqus_shortname
+```
+### Formspree
+
+
+TODO: Write usage instructions here. Describe your available layouts, includes, sass and/or assets.
+
+## Contributing
+
+Bug reports and pull requests are welcome on GitHub at https://github.com/janczizikow/sleek. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+
+## Development
+
+To set up your environment to develop this theme, run `bundle install`.
+
+Your theme is setup just like a normal Jekyll site! To test your theme, run `bundle exec jekyll serve` and open your browser at `http://localhost:4000`. This starts a Jekyll server using your theme. Add pages, documents, data, etc. like normal to test your theme's contents. As you make modifications to your theme and to your content, your site will regenerate and you should see the changes in the browser after a refresh, just like normal.
+
+When your theme is released, only the files in `_layouts`, `_includes`, `_sass` and `assets` tracked with Git will be bundled.
+To add a custom directory to your theme-gem, please edit the regexp in `jekyll-sleek.gemspec` accordingly.
+
+## License
+
+The theme is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).

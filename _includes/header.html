@@ -1,20 +1,25 @@
-<header class="c-header">
-  <div class="c-header__box">
-    <div class="c-search">
-      <div class="c-search__box">
-        <label for="js-search-input" class="u-screen-reader-text">Search for Blog</label>
-        <input type="text" id="js-search-input" class="c-search__text" autocomplete="off" placeholder="Type to search...">
-        <div data-icon='ei-search' data-size='s'></div>
+<header class="header" itemscope itemtype="http://schema.org/SiteNavigationElement" aria-label="Main navigation">
+  <div class="container">
+    <div class="header__inner">
+      <a class="header__logo" href="{{ '/' | relative_url }}">
+        <div class="header__logo--container">
+          {% include logo.svg %}
+        </div>
+      </a>
+      <nav class="header__links">
+        <div class="container header__links-wrapper">
+          <a class="header__link" href="{{ '/' | relative_url }}" itemprop="url"><span itemprop="name">Home</span></a>
+          <a class="header__link" href="{{ '/about' | relative_url }}" itemprop="url"><span itemprop="name">About</span></a>
+          <a class="header__link" href="{{ '/contact' | relative_url }}" itemprop="url">
+            <span itemprop="name">Contact</span>
+          </a>
+        </div>
+      </nav>
+      <div class="header__toggle">
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
-      <ul id="js-results-container" class="c-search-results-list"></ul>
-    </div>
-    <div class="c-nav">
-      <ul class="c-nav__list u-lists-reset">
-        <li class="c-nav__item is-active">
-          <div data-icon='ei-pencil' data-size='s'></div> Posts</li>
-        <li class="c-nav__item">
-          <div data-icon='ei-star' data-size='s'></div> Categories</li>
-      </ul>
     </div>
   </div>
-</header> <!-- /.c-header -->
+</header>
