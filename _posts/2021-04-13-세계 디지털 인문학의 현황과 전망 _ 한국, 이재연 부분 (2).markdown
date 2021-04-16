@@ -1,10 +1,9 @@
 ---
 layout: post
-title: "세계 디지털 인문학의 현황과 전망 _ 한국, 이재연 부분 (2)"
+title: "세계 디지털 인문학의 현황과 전망 _ 한국, 이재연 부분 (2) [Digital Humanities]"
 date: 2021-04-13 22:13:18 +0200
 image: LJY_DigitalHumanities_status and view.jpg
 tags: [jekyll, docs]
-categories: Digital_Humanities
 ---
 -디지털 시대의 인문학
 인문학의 위기는 정보의 집적에 의해 인문학적 진리가 무가치해 보이는 현상으로 전제하나, 이 현상은 정보화시대 자체의 문제라기보다는 그간 있어 왔던 인문주의에 대한 과학주의의 학문적 도전이 새로운 양상으로 나타난 것 _ 김도훈  
