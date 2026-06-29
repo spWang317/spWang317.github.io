@@ -16,7 +16,7 @@ import { defineConfig } from 'astro/config';
 // ─────────────────────────────────────────────────────────────
 export default defineConfig({
   site: 'https://spwang317.github.io',
-  base: '/personal-site/',
+  base: '/',
   i18n: {
     locales: ['ko', 'en'],
     defaultLocale: 'ko',
