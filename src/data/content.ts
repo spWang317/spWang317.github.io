@@ -136,14 +136,14 @@ export const research: {
   },
   {
     title: {
-      ko: '한국 산문시 아틀라스',
-      en: 'Atlas of Korean Prose Poetry',
+      ko: '한국 산문시 주제의 신뢰도 검증',
+      en: 'Reliable Topics in Korean Prose Poetry',
     },
     summary: {
-      ko: '2000–2024년 한국 산문시 5,166편을 모은 공개 데이터셋과 인터랙티브 웹앱을 만들어, 시인·작품·언어 패턴을 자유롭게 탐색할 수 있도록 공개했습니다.',
-      en: 'Built and openly released a dataset of 5,166 Korean prose poems (2000–2024) with an interactive web app for exploring poets, works, and language patterns.',
+      ko: '2000–2024년 한국 산문시 4,642편을 토픽 모델링으로 분석하고, 모델을 여러 방식으로 흔들어도 끝까지 살아남는 여섯 가지 핵심 모티프(바다·꽃·비·시 쓰기·음악·고양이)를 가려냈습니다. 동시에 작품의 약 절반은 어떤 주제로도 깔끔히 환원되지 않아, 산문시가 주제화에 저항하는 장르임을 보였습니다.',
+      en: 'Analyzed 4,642 Korean prose poems (2000–2024) with topic modeling and, by perturbing the model in many ways, isolated six core motifs that survive every test (sea, flora, rain, poem-making, music, cat). At the same time, about half of the corpus resists reduction to any topic, showing that prose poetry pushes back against being thematized.',
     },
-    tags: ['Open Dataset', 'Computational Humanities', 'Poetry'],
+    tags: ['Topic Modeling', 'Computational Humanities', 'Poetry'],
   },
   {
     title: {
