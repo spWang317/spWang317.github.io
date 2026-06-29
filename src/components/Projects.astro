@@ -1,0 +1,69 @@
+---
+import type { Locale } from '../data/content';
+import { projects } from '../data/content';
+import { t } from '../i18n/ui';
+
+interface Props { lang: Locale; }
+const { lang } = Astro.props;
+const tr = t(lang);
+---
+
+<section id="projects">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">{tr('eyebrow.projects')}</span>
+      <h2 class="section-title">{tr('section.projects')}</h2>
+      <p class="section-sub">{tr('section.projects.sub')}</p>
+    </div>
+    <ol class="list">
+      {projects.map((p, i) => (
+        <li class="row reveal" style={`transition-delay:${i * 50}ms`}>
+          <div class="term">{p.term[lang]}</div>
+          <div class="body">
+            <p class="head">
+              <span class="role">{p.role[lang]}</span>
+              <span class="dot">·</span>
+              <span class="org">{p.org[lang]}</span>
+            </p>
+            <p class="title">{p.title[lang]}</p>
+          </div>
+        </li>
+      ))}
+    </ol>
+  </div>
+</section>
+
+<style>
+  .list { list-style: none; display: flex; flex-direction: column; }
+  .row {
+    display: grid;
+    grid-template-columns: 168px 1fr;
+    gap: 28px;
+    align-items: baseline;
+    padding: 22px 0;
+    border-top: 1px solid var(--border);
+  }
+  .row:first-child { border-top: none; }
+  .term {
+    color: var(--accent);
+    font-weight: 650;
+    font-size: 0.92rem;
+    letter-spacing: -0.01em;
+  }
+  .head {
+    color: var(--muted);
+    font-size: 0.88rem;
+    margin-bottom: 4px;
+  }
+  .role { font-weight: 650; color: var(--text); }
+  .dot { margin: 0 6px; opacity: 0.5; }
+  .title {
+    font-weight: 650;
+    letter-spacing: -0.01em;
+    line-height: 1.45;
+  }
+
+  @media (max-width: 620px) {
+    .row { grid-template-columns: 1fr; gap: 4px; }
+  }
+</style>

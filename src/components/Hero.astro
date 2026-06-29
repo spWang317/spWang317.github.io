@@ -1,0 +1,119 @@
+---
+import type { Locale } from '../data/content';
+import { profile, about } from '../data/content';
+
+interface Props { lang: Locale; }
+const { lang } = Astro.props;
+const base = import.meta.env.BASE_URL;
+const name = profile.name[lang];
+const initial = name.trim().charAt(0) || '·';
+const avatarSrc = profile.avatar ? `${base}${profile.avatar}` : '';
+const bio = about[lang].split(/\n\s*\n/).map((p) => p.trim()).filter(Boolean);
+---
+
+<section id="about" class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-text reveal">
+      <div class="avatar-sm">
+        {avatarSrc
+          ? <img src={avatarSrc} alt={name} width="96" height="96" />
+          : <span>{initial}</span>}
+      </div>
+      <h1>
+        {name}
+        <span class="field">{profile.field[lang]}</span>
+      </h1>
+      <div class="roles">
+        {profile.roles[lang].map((r) => <span class="chip">{r}</span>)}
+      </div>
+      <p class="tagline">{profile.tagline[lang]}</p>
+    </div>
+
+    <div class="bio reveal">
+      {bio.map((p) => <p>{p}</p>)}
+      {profile.links.length > 0 && (
+        <div class="actions">
+          {profile.links.map((lnk) => {
+            const href = lnk.href.startsWith('http') ? lnk.href : `${base}${lnk.href.replace(/^\//, '')}`;
+            return (
+              <a class="btn" href={href} target={lnk.href.startsWith('http') ? '_blank' : undefined} rel="noopener">
+                {lnk.label}
+              </a>
+            );
+          })}
+        </div>
+      )}
+    </div>
+  </div>
+  <div class="glow" aria-hidden="true"></div>
+</section>
+
+<style>
+  .hero { position: relative; overflow: hidden; padding-top: clamp(56px, 9vw, 96px); }
+  .hero-grid { position: relative; z-index: 1; }
+  /* 텍스트는 좌측 정렬, 블록만 페이지 가운데에 좁게 배치 */
+  .hero-text {
+    max-width: 640px;
+    margin: 0 auto;
+    text-align: left;
+  }
+  .avatar-sm {
+    width: clamp(220px, 30vw, 336px);
+    height: clamp(220px, 30vw, 336px);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 5rem;
+    font-weight: 750;
+    color: #fff;
+    background: linear-gradient(135deg, var(--accent), #b08cff 90%);
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+    margin: 0 0 34px;
+  }
+  .avatar-sm img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 30%;
+  }
+  h1 {
+    font-size: clamp(2.1rem, 6vw, 3.4rem);
+    font-weight: 800;
+    letter-spacing: -0.035em;
+    line-height: 1.12;
+  }
+  .field {
+    display: block;
+    margin-top: 10px;
+    font-size: clamp(1rem, 2.2vw, 1.18rem);
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: -0.01em;
+  }
+  .roles { display: flex; flex-wrap: wrap; gap: 8px; margin: 22px 0 18px; }
+  .tagline {
+    font-size: clamp(1.05rem, 2.4vw, 1.3rem);
+    color: var(--muted);
+    line-height: 1.55;
+  }
+  .actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 30px; }
+  .bio {
+    max-width: 640px;
+    margin: 28px auto 0;
+    border-top: 1px solid var(--border);
+    padding-top: 22px;
+  }
+  .bio p { color: var(--muted); margin-bottom: 1em; }
+  .bio p:last-child { margin-bottom: 0; }
+  .glow {
+    position: absolute;
+    top: -180px;
+    right: -160px;
+    width: 520px;
+    height: 520px;
+    background: radial-gradient(circle, var(--accent-soft), transparent 68%);
+    filter: blur(20px);
+    pointer-events: none;
+  }
+</style>

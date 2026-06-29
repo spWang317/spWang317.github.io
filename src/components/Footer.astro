@@ -1,0 +1,31 @@
+---
+import type { Locale } from '../data/content';
+import { profile } from '../data/content';
+import { t } from '../i18n/ui';
+
+interface Props { lang: Locale; }
+const { lang } = Astro.props;
+const tr = t(lang);
+const year = new Date().getFullYear();
+---
+
+<footer>
+  <div class="wrap row">
+    <span>© {year} {profile.name[lang]}</span>
+    <span class="built">{tr('footer.built')}<a href="https://astro.build" target="_blank" rel="noopener">Astro</a></span>
+  </div>
+</footer>
+
+<style>
+  footer { border-top: 1px solid var(--border); padding: 28px 0; }
+  .row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    color: var(--muted);
+    font-size: 0.85rem;
+  }
+  .built a { color: var(--muted); border-bottom: 1px solid var(--border); }
+  .built a:hover { color: var(--accent); }
+</style>

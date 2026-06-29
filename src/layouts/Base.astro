@@ -1,0 +1,79 @@
+---
+import '../styles/global.css';
+import type { Locale } from '../data/content';
+import { profile } from '../data/content';
+import { t } from '../i18n/ui';
+
+interface Props { lang: Locale; }
+const { lang } = Astro.props;
+const tr = t(lang);
+const name = profile.name[lang];
+const desc = profile.tagline[lang];
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{name} — {profile.field[lang]}</title>
+    <meta name="description" content={desc} />
+    <meta property="og:title" content={name} />
+    <meta property="og:description" content={desc} />
+    <meta property="og:type" content="website" />
+    <meta name="theme-color" content="#6d5efc" />
+    <link rel="icon" href={`${import.meta.env.BASE_URL}favicon.svg`} type="image/svg+xml" />
+    <link rel="alternate" hreflang="ko" href={Astro.site ? new URL(import.meta.env.BASE_URL, Astro.site).href : '/'} />
+    <link rel="alternate" hreflang="en" href={Astro.site ? new URL(`${import.meta.env.BASE_URL}en/`, Astro.site).href : '/en/'} />
+    <!-- 다크모드 깜빡임 방지: 페인트 전에 테마 결정 -->
+    <script is:inline>
+      (function () {
+        try {
+          var s = localStorage.getItem('theme');
+          var d = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          document.documentElement.dataset.theme = s || (d ? 'dark' : 'light');
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <a href="#main" class="skip">{tr('skip')}</a>
+    <slot />
+
+    <script>
+      // 스크롤 시 .reveal 요소를 순차 등장
+      const els = document.querySelectorAll('.reveal');
+      if ('IntersectionObserver' in window) {
+        const io = new IntersectionObserver(
+          (entries) => {
+            for (const e of entries) {
+              if (e.isIntersecting) {
+                (e.target as HTMLElement).classList.add('is-visible');
+                io.unobserve(e.target);
+              }
+            }
+          },
+          { threshold: 0.12, rootMargin: '0px 0px -8% 0px' }
+        );
+        els.forEach((el) => io.observe(el));
+      } else {
+        els.forEach((el) => el.classList.add('is-visible'));
+      }
+    </script>
+
+    <style>
+      .skip {
+        position: fixed;
+        left: 16px;
+        top: -56px;
+        z-index: 100;
+        background: var(--accent);
+        color: #fff;
+        padding: 10px 16px;
+        border-radius: 10px;
+        transition: top 0.2s var(--ease);
+      }
+      .skip:focus { top: 16px; }
+    </style>
+  </body>
+</html>

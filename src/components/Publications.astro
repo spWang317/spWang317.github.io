@@ -1,0 +1,78 @@
+---
+import type { Locale } from '../data/content';
+import { publications } from '../data/content';
+import { t } from '../i18n/ui';
+
+interface Props { lang: Locale; }
+const { lang } = Astro.props;
+const tr = t(lang);
+
+const sorted = [...publications].sort((a, b) => b.year - a.year);
+const years = [...new Set(sorted.map((p) => p.year))];
+---
+
+<section id="publications">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">{tr('section.publications')}</span>
+      <h2 class="section-title">{tr('section.publications')}</h2>
+    </div>
+
+    <div class="pubs">
+      {years.map((y) => (
+        <div class="year-row reveal">
+          <div class="year">{y}</div>
+          <ol class="items">
+            {sorted.filter((p) => p.year === y).map((p) => (
+              <li>
+                <p class="title">{p.title}</p>
+                <p class="meta">{p.authors} · <em>{p.venue}</em></p>
+                {p.links && p.links.length > 0 && (
+                  <p class="links">
+                    {p.links.filter((l) => l.href).map((l) => (
+                      <a href={l.href} target="_blank" rel="noopener">{l.label}</a>
+                    ))}
+                  </p>
+                )}
+              </li>
+            ))}
+          </ol>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .pubs { display: flex; flex-direction: column; gap: 14px; }
+  .year-row {
+    display: grid;
+    grid-template-columns: 72px 1fr;
+    gap: 28px;
+    padding: 22px 0;
+    border-top: 1px solid var(--border);
+  }
+  .year-row:first-child { border-top: none; }
+  .year {
+    font-size: 1.1rem;
+    font-weight: 750;
+    color: var(--accent);
+    letter-spacing: -0.02em;
+  }
+  .items { list-style: none; display: flex; flex-direction: column; gap: 22px; }
+  .title { font-weight: 650; letter-spacing: -0.01em; }
+  .meta { color: var(--muted); font-size: 0.92rem; margin-top: 3px; }
+  .links { display: flex; gap: 14px; margin-top: 9px; }
+  .links a {
+    font-size: 0.83rem;
+    font-weight: 650;
+    color: var(--accent);
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.18s var(--ease);
+  }
+  .links a:hover { border-color: var(--accent); }
+
+  @media (max-width: 560px) {
+    .year-row { grid-template-columns: 1fr; gap: 12px; }
+  }
+</style>
