@@ -373,8 +373,8 @@ export const education: {
   {
     period: '2022 – 2027',
     degree: {
-      ko: '이학박사 (졸업예정 2027.02)',
-      en: 'Ph.D. in Science (expected Feb 2027)',
+      ko: '이학박사 (수료 2024.08 / 졸업예정 2027.02)',
+      en: 'Ph.D. in Science (coursework completed Aug 2024 / expected Feb 2027)',
     },
     org: { ko: 'KAIST 문화기술대학원', en: 'KAIST Graduate School of Culture Technology' },
     thesis: {
