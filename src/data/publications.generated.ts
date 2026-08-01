@@ -37,12 +37,4 @@ export const publications: Publication[] = [
     status: { ko: "심사 중 · 2026.01 제출", en: "Under review · submitted 2026.01" },
     links: [{ label: "Preprint", href: "https://doi.org/10.21203/rs.3.rs-8722451/v1" }, { label: "Code", href: "https://github.com/spWang317/ProsePoetry_against_FlashFiction" }],
   },
-  {
-    year: 2026,
-    authors: "Sungpil Wang",
-    title: "Prosepoem Atlas: An Atlas of Korean Prose Poetry without Line Breaks (Four Major Publisher Series, 2000–2024)",
-    venue: "Zenodo",
-    status: { ko: "공개 데이터셋 · CC BY 4.0", en: "Open dataset · CC BY 4.0" },
-    links: [{ label: "DOI", href: "https://doi.org/10.5281/zenodo.20149336" }, { label: "Code", href: "https://github.com/spWang317/prosepoem-atlas" }],
-  },
 ];
