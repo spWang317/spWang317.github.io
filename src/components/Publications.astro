@@ -27,6 +27,7 @@ const years = [...new Set(sorted.map((p) => p.year))];
               <li>
                 <p class="title">{p.title}</p>
                 <p class="meta">{p.authors} · <em>{p.venue}</em></p>
+                {p.status && <p class="status">{p.status[lang]}</p>}
                 {p.links && p.links.length > 0 && (
                   <p class="links">
                     {p.links.filter((l) => l.href).map((l) => (
@@ -62,6 +63,16 @@ const years = [...new Set(sorted.map((p) => p.year))];
   .items { list-style: none; display: flex; flex-direction: column; gap: 22px; }
   .title { font-weight: 650; letter-spacing: -0.01em; }
   .meta { color: var(--muted); font-size: 0.92rem; margin-top: 3px; }
+  .status {
+    display: inline-block;
+    margin-top: 7px;
+    padding: 2px 9px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    color: var(--muted);
+    font-size: 0.78rem;
+    font-weight: 600;
+  }
   .links { display: flex; gap: 14px; margin-top: 9px; }
   .links a {
     font-size: 0.83rem;

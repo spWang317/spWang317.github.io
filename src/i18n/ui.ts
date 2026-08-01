@@ -5,6 +5,7 @@ export const ui = {
   ko: {
     'nav.about': '소개',
     'nav.research': '연구',
+    'nav.publications': '논문',
     'nav.books': '저서',
     'nav.projects': '참여연구사업',
     'nav.teaching': '강의·강연',
@@ -12,6 +13,8 @@ export const ui = {
     'nav.contact': '연락',
     'section.research': '연구',
     'section.research.sub': '대표 연구 및 진행 중인 작업',
+    'section.publications': '논문',
+    'section.publications.sub': '출판 및 심사 중인 논문',
     'section.books': '저서',
     'section.books.sub': '참여한 단행본',
     'section.projects': '참여연구사업',
@@ -35,6 +38,7 @@ export const ui = {
   en: {
     'nav.about': 'About',
     'nav.research': 'Research',
+    'nav.publications': 'Publications',
     'nav.books': 'Books',
     'nav.projects': 'Projects',
     'nav.teaching': 'Teaching',
@@ -42,6 +46,8 @@ export const ui = {
     'nav.contact': 'Contact',
     'section.research': 'Research',
     'section.research.sub': 'Selected and ongoing work',
+    'section.publications': 'Publications',
+    'section.publications.sub': 'Published and under review',
     'section.books': 'Books',
     'section.books.sub': 'Contributed to',
     'section.projects': 'Projects & Grants',

@@ -251,13 +251,9 @@ export const projects: {
 ];
 
 // 논문 섹션은 사용하지 않습니다 (페이지에서 import 안 함).
-export const publications: {
-  year: number;
-  authors: string;
-  title: string;
-  venue: string;
-  links?: { label: string; href: string }[];
-}[] = [];
+// 논문 목록은 research/publications.yaml 에서 자동 생성됩니다.
+// 내용을 고치려면 그 파일을 수정한 뒤 `python3 sync.py` 를 실행하세요.
+export { publications, type Publication } from './publications.generated';
 
 // ── 강의 · 강연 (시간 순, 최신부터) ──────────────────────────────
 export const teaching: {
