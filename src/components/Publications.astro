@@ -25,9 +25,15 @@ const years = [...new Set(sorted.map((p) => p.year))];
           <ol class="items">
             {sorted.filter((p) => p.year === y).map((p) => (
               <li>
-                <p class="title">{p.title}</p>
-                <p class="meta">{p.authors} · <em>{p.venue}</em></p>
-                {p.status && <p class="status">{p.status[lang]}</p>}
+                <p class:list={['title', p.redacted && 'withheld']}>
+                  {p.redacted ? tr('pub.redacted.title') : p.title}
+                </p>
+                <p class="meta">
+                  {p.authors} · <em>{p.redacted ? tr('pub.redacted.venue') : p.venue}</em>
+                </p>
+                <p class="status">
+                  {p.redacted ? tr('pub.redacted.status') : p.status?.[lang]}
+                </p>
                 {p.links && p.links.length > 0 && (
                   <p class="links">
                     {p.links.filter((l) => l.href).map((l) => (
@@ -62,6 +68,7 @@ const years = [...new Set(sorted.map((p) => p.year))];
   }
   .items { list-style: none; display: flex; flex-direction: column; gap: 22px; }
   .title { font-weight: 650; letter-spacing: -0.01em; }
+  .title.withheld { color: var(--muted); font-style: italic; font-weight: 550; }
   .meta { color: var(--muted); font-size: 0.92rem; margin-top: 3px; }
   .status {
     display: inline-block;

@@ -85,21 +85,21 @@ export const research: {
       en: 'Flash Fiction Generation Agent',
     },
     summary: {
-      ko: '사람이 쓴 초단편소설에서 9개의 서사 원형을 추출하고, 이를 기준으로 한국어 언어 모델(Upstage)을 훈련했습니다. 생성된 글을 에이전트가 스스로 진단하고 다시 쓰는 파이프라인입니다.',
-      en: 'Extracted nine narrative archetypes from human-written flash fiction and trained a Korean language model (Upstage) on them. An agent then diagnoses and rewrites its own output in a closed loop.',
+      ko: '한국어 언어 모델로 초단편소설을 생성하고, 에이전트가 그 결과를 스스로 점검해 다시 쓰는 파이프라인을 만들었습니다.',
+      en: 'Built a pipeline in which a Korean language model writes flash fiction and an agent reviews and rewrites its own output.',
     },
-    tags: ['Generative AI', 'AI Agent', 'Reinforcement Learning'],
+    tags: ['Generative AI', 'AI Agent', 'NLP'],
   },
   {
     title: {
-      ko: '기승전결 vs Freytag: 서사 검색 비교',
-      en: 'Plot Structure & Story Retrieval',
+      ko: '서사 구조와 이야기 검색',
+      en: 'Narrative Structure and Story Retrieval',
     },
     summary: {
-      ko: '한국 전통 서사 구조(기승전결)와 서양 구조(Freytag) 중 무엇이 이야기 검색에 더 도움이 되는지 비교했습니다. 구조보다 질의를 얼마나 압축하느냐가 검색 성능을 좌우함을 확인했습니다.',
-      en: 'Compared whether a traditional Korean plot structure or a Western one helps retrieve stories better, and found that how much a query is compressed matters more than the plot structure itself.',
+      ko: '이야기를 어떤 구조로 요약해 표현하느냐가 검색 성능에 영향을 주는지 비교 실험으로 살펴봤습니다.',
+      en: 'Ran controlled experiments on whether the structure used to summarize a story affects how well it can be retrieved.',
     },
-    tags: ['Information Retrieval', 'NLP', 'Narrative Analysis'],
+    tags: ['Information Retrieval', 'NLP'],
   },
   {
     title: {
@@ -136,12 +136,12 @@ export const research: {
   },
   {
     title: {
-      ko: '한국 산문시 주제의 신뢰도 검증',
-      en: 'Reliable Topics in Korean Prose Poetry',
+      ko: '한국 산문시 주제 분석',
+      en: 'Topics in Korean Prose Poetry',
     },
     summary: {
-      ko: '한국 산문시 4,642편(2000–2024)을 토픽 모델링으로 분석해, 교란을 거쳐도 끝까지 살아남는 여섯 모티프(바다·꽃·비·시 쓰기·음악·고양이)를 가려냈습니다. 동시에 작품의 약 절반은 어떤 주제로도 환원되지 않아, 산문시가 주제화에 저항함을 보였습니다.',
-      en: 'Used topic modeling on 4,642 Korean prose poems (2000–2024) to isolate six motifs that survive every perturbation (sea, flora, rain, poem-making, music, cat), while about half the corpus resists reduction to any topic.',
+      ko: '한국 현대 산문시를 토픽 모델링으로 분석하고, 조건을 바꿔가며 안정적으로 유지되는 주제가 무엇인지 검증했습니다.',
+      en: 'Applied topic modeling to contemporary Korean prose poetry and tested which topics remain stable under changing conditions.',
     },
     tags: ['Topic Modeling', 'Computational Humanities', 'Poetry'],
   },
