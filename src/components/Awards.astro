@@ -1,0 +1,70 @@
+---
+import type { Locale } from '../data/content';
+import { awards } from '../data/content';
+import { t } from '../i18n/ui';
+
+interface Props { lang: Locale; }
+const { lang } = Astro.props;
+const tr = t(lang);
+---
+
+<section id="awards">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">{tr('eyebrow.awards')}</span>
+      <h2 class="section-title">{tr('section.awards')}</h2>
+      <p class="section-sub">{tr('section.awards.sub')}</p>
+    </div>
+    <ol class="list">
+      {awards.map((a, i) => (
+        <li class="row reveal" style={`transition-delay:${i * 50}ms`}>
+          <div class="term">{a.term[lang]}</div>
+          <div class="body">
+            <p class="prize">{a.prize[lang]}</p>
+            <p class="event">{a.event[lang]}</p>
+            <p class="work">{a.work[lang]}</p>
+          </div>
+        </li>
+      ))}
+    </ol>
+  </div>
+</section>
+
+<style>
+  .list { list-style: none; display: flex; flex-direction: column; }
+  .row {
+    display: grid;
+    grid-template-columns: 168px 1fr;
+    gap: 28px;
+    align-items: baseline;
+    padding: 22px 0;
+    border-top: 1px solid var(--border);
+  }
+  .row:first-child { border-top: none; }
+  .term {
+    color: var(--accent);
+    font-weight: 650;
+    font-size: 0.92rem;
+    letter-spacing: -0.01em;
+  }
+  .prize {
+    font-weight: 650;
+    letter-spacing: -0.01em;
+    line-height: 1.45;
+  }
+  .event {
+    color: var(--muted);
+    font-size: 0.88rem;
+    margin-top: 4px;
+  }
+  .work {
+    color: var(--muted);
+    font-size: 0.92rem;
+    margin-top: 7px;
+    line-height: 1.55;
+  }
+
+  @media (max-width: 620px) {
+    .row { grid-template-columns: 1fr; gap: 4px; }
+  }
+</style>

@@ -250,6 +250,42 @@ export const projects: {
   },
 ];
 
+// ── 수상 (시간 순, 최신부터) ────────────────────────────────────
+export const awards: {
+  term: L;
+  prize: L;
+  event: L;
+  work: L;
+}[] = [
+  {
+    term: { ko: '2026.08', en: '2026.08' },
+    prize: { ko: '대상 (KAIST 총장상)', en: "Grand Prize (KAIST President's Award)" },
+    event: {
+      ko: '2026 KAIST AI×실패 아이디어 공모전 · KAIST 실패연구소',
+      en: '2026 KAIST AI×Failure Idea Competition · KAIST Center for Ambitious Failure',
+    },
+    work: {
+      ko: '「예술의 정의에서 AI를 지운 대가」 — AI 협업 예술의 이분법적 라벨링이 초래할 실패의 사전 분석(Pre-Mortem)',
+      en: '"The Cost of Erasing AI from the Definition of Art" — a pre-mortem of failures caused by binary AI labeling of hybrid art',
+    },
+  },
+  {
+    term: { ko: '2019.08', en: '2019.08' },
+    prize: {
+      ko: '아이디어 기획 부문 장려상 (한국동서발전 사장상)',
+      en: "Encouragement Award, Idea Planning Track (Korea East-West Power CEO's Award)",
+    },
+    event: {
+      ko: '제7회 공공데이터 활용 비즈니스 아이디어 공모전 · 산업통상자원부',
+      en: 'The 7th Public Data Utilization Business Idea Contest · Ministry of Trade, Industry and Energy',
+    },
+    work: {
+      ko: '「따라와」 — 교통사고다발지 등 공공데이터 기반 따릉이 경로 탐색·안전 정보 제공 시스템',
+      en: '"Ttarawa" — public-data-driven route navigation and safety information system for Seoul bike-share',
+    },
+  },
+];
+
 // 논문 섹션은 사용하지 않습니다 (페이지에서 import 안 함).
 // 논문 목록은 research/publications.yaml 에서 자동 생성됩니다.
 // 내용을 고치려면 그 파일을 수정한 뒤 `python3 sync.py` 를 실행하세요.
