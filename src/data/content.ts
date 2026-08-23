@@ -151,8 +151,8 @@ export const research: {
       en: "Evolution of Seo Jeong-Ju's Poetic World",
     },
     summary: {
-      ko: '서정주(1915–2000)의 시 950편, 9만 8천 단어를 시집 단위로 분석했습니다. 색채어·왕조명 빈도, 구조적 토픽 모델링, 감성 분석으로 「신라 정신」의 등장 시점과 지속, 1975년 이후 정서가 부정에서 긍정으로 뒤집히는 흐름을 수치로 확인했습니다. (DH2022)',
-      en: 'Analyzed all 950 poems (98,000 words) of Seo Jeong-Ju (1915–2000) collection by collection. Color and kingdom vocabulary, structural topic modeling, and sentiment analysis quantify when the “Silla spirit” emerged and persisted, and how his tone turned from negative to positive after 1975. (DH2022)',
+      ko: '서정주의 시 950편을 키워드·토픽·감성으로 분석해, 「신라 정신」이 자리 잡은 시점과 1975년 이후 정서가 긍정으로 돌아서는 흐름을 수치로 보였습니다. (DH2022)',
+      en: 'Analyzed 950 poems by Seo Jeong-Ju through keywords, topics, and sentiment, quantifying when the “Silla spirit” took hold and how his tone turned positive after 1975. (DH2022)',
     },
     tags: ['Computational Humanities', 'Poetry', 'Seo Jeong-Ju'],
     href: 'https://dh-abstracts.library.virginia.edu/works/11973',
