@@ -24,7 +24,13 @@ const tr = t(lang);
             {e.thesis && (
               <p class="thesis">
                 <span class="label">{lang === 'ko' ? '논문' : 'Thesis'}</span>
-                <em>{e.thesis[lang]}</em>
+                {e.thesisHref ? (
+                  <a class="thesis-link" href={e.thesisHref} target="_blank" rel="noopener">
+                    <em>{e.thesis[lang]}</em>
+                  </a>
+                ) : (
+                  <em>{e.thesis[lang]}</em>
+                )}
               </p>
             )}
           </div>
@@ -72,6 +78,17 @@ const tr = t(lang);
     vertical-align: 1px;
   }
   .thesis em { font-style: normal; }
+  .thesis-link {
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-color: var(--border);
+    text-underline-offset: 3px;
+    transition: color 0.18s var(--ease), text-decoration-color 0.18s var(--ease);
+  }
+  .thesis-link:hover {
+    color: var(--text);
+    text-decoration-color: var(--accent);
+  }
 
   @media (max-width: 620px) {
     .row { grid-template-columns: 1fr; gap: 4px; }

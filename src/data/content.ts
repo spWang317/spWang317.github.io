@@ -415,6 +415,7 @@ export const education: {
   degree: L;
   org: L;
   thesis?: L;
+  thesisHref?: string;   // 논문 원문 링크(있으면 제목이 링크가 됩니다)
 }[] = [
   {
     period: '2022 – 2027',
@@ -436,6 +437,7 @@ export const education: {
       ko: "Characterising the Evolution of Seo Jeong-Ju's Poetic World Through Computational Analysis on Keywords, Topics, and Sentiments",
       en: "Characterising the Evolution of Seo Jeong-Ju's Poetic World Through Computational Analysis on Keywords, Topics, and Sentiments",
     },
+    thesisHref: 'https://koasas.kaist.ac.kr/handle/10203/308294',
   },
   {
     period: '2015 – 2020',
