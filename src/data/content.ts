@@ -155,6 +155,7 @@ export const research: {
       en: 'Led the user-perception study for an XR co-op dance game, analyzing 12,000 news articles about dancing to surface how public perception differs and to inform the game’s direction. (HCI Korea 2024)',
     },
     tags: ['Text Mining', 'HCI', 'Games'],
+    href: 'https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE11714856',
   },
   {
     title: {
@@ -166,6 +167,7 @@ export const research: {
       en: 'Studied how the death-themed game Spiritfarer helps players cope with loss, using in-depth interviews to trace how grief oscillates between loss and restoration. (CHI EA 2021)',
     },
     tags: ['HCI', 'Qualitative Research', 'Games'],
+    href: 'https://dl.acm.org/doi/abs/10.1145/3411763.3451608',
   },
 ];
 
