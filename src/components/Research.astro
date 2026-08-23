@@ -31,7 +31,6 @@ const tr = t(lang);
             <div class="tags">
               {r.tags.map((tg) => <span class="chip">{tg}</span>)}
             </div>
-            {r.href && <span class="arrow" aria-hidden="true">→</span>}
           </Tag>
         );
       })}
@@ -70,14 +69,4 @@ const tr = t(lang);
   }
   .card p { color: var(--muted); font-size: 0.95rem; margin-bottom: 16px; }
   .tags { display: flex; flex-wrap: wrap; gap: 7px; }
-  .arrow {
-    position: absolute;
-    top: 22px;
-    right: 22px;
-    color: var(--accent);
-    opacity: 0;
-    transform: translateX(-4px);
-    transition: opacity 0.25s var(--ease), transform 0.25s var(--ease);
-  }
-  a.card:hover .arrow { opacity: 1; transform: none; }
 </style>
