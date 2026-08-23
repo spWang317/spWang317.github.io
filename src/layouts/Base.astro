@@ -48,8 +48,12 @@ const desc = profile.tagline[lang];
           (entries) => {
             for (const e of entries) {
               if (e.isIntersecting) {
-                (e.target as HTMLElement).classList.add('is-visible');
-                io.unobserve(e.target);
+                const el = e.target as HTMLElement;
+                el.classList.add('is-visible');
+                io.unobserve(el);
+                // 등장 스태거 지연은 등장에만 쓰고, 끝나면 없애서 호버 반응이 늦어지지 않게 한다
+                const delay = parseFloat(el.style.transitionDelay || '0') || 0;
+                setTimeout(() => { el.style.transitionDelay = '0ms'; }, delay + 750);
               }
             }
           },
@@ -57,7 +61,10 @@ const desc = profile.tagline[lang];
         );
         els.forEach((el) => io.observe(el));
       } else {
-        els.forEach((el) => el.classList.add('is-visible'));
+        els.forEach((el) => {
+          el.classList.add('is-visible');
+          (el as HTMLElement).style.transitionDelay = '0ms';
+        });
       }
     </script>
 
