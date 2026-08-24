@@ -284,6 +284,18 @@ export const awards: {
     },
   },
   {
+    term: { ko: '2026.08', en: '2026.08' },
+    prize: { ko: '대상', en: 'Grand Prize' },
+    event: {
+      ko: '2026 KAISTian 실패 에세이 공모전 · KAIST 실패연구소',
+      en: '2026 KAISTian Failure Essay Contest · KAIST Center for Ambitious Failure',
+    },
+    work: {
+      ko: '「거절당하지 못한 논문들」 — 융합 연구가 제출처를 찾지 못하는 실패에 관한 에세이 (기획주제: 미래와 실패)',
+      en: '"Papers That Could Not Even Be Rejected" — an essay on interdisciplinary work that cannot find a venue (theme: Future and Failure)',
+    },
+  },
+  {
     term: { ko: '2019.08', en: '2019.08' },
     prize: {
       ko: '아이디어 기획 부문 장려상 (한국동서발전 사장상)',
