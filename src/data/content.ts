@@ -220,7 +220,7 @@ export const projects: {
   {
     term: { ko: '2021.08 – 2023.12', en: '2021.08 – 2023.12' },
     role: { ko: '주관기관 실무책임자 (2023)', en: 'Project Manager, Lead Org. (2023)' },
-    org: { ko: 'KAIST', en: 'KAIST' },
+    org: { ko: '한국과학기술원 (KAIST)', en: 'Korea Advanced Institute of Science and Technology (KAIST)' },
     title: {
       ko: '포스트 AI 문화기술 상상 연구',
       en: 'Imagining post-AI culture technology',
@@ -293,6 +293,18 @@ export const awards: {
     work: {
       ko: '「거절당하지 못한 논문들」 — 융합 연구가 제출처를 찾지 못하는 실패에 관한 에세이 (기획주제: 미래와 실패)',
       en: '"Papers That Could Not Even Be Rejected" — an essay on interdisciplinary work that cannot find a venue (theme: Future and Failure)',
+    },
+  },
+  {
+    term: { ko: '2026.07', en: '2026.07' },
+    prize: { ko: 'AI 베이스캠프 100인 선정', en: 'Selected — AI Base Camp 100' },
+    event: {
+      ko: '2026 KAIST OverEdge(오엣) · KAIST 창업원 · KAIST AI 대학원',
+      en: '2026 KAIST OverEdge · KAIST Startup Center · KAIST AI Graduate School',
+    },
+    work: {
+      ko: '「서점초단편」 — 한국 초단편소설 AI 큐레이션·완독 습관 플랫폼',
+      en: '"Bookstore Flash Fiction" — AI curation platform building a reading habit around Korean flash fiction',
     },
   },
   {
