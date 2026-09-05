@@ -269,7 +269,7 @@ export const awards: {
   term: L;
   prize: L;
   event: L;
-  work: L;
+  work?: L;
 }[] = [
   {
     term: { ko: '2026.08', en: '2026.08' },
@@ -297,14 +297,13 @@ export const awards: {
   },
   {
     term: { ko: '2026.07', en: '2026.07' },
-    prize: { ko: 'AI 베이스캠프 100인 선정', en: 'Selected — AI Base Camp 100' },
+    prize: {
+      ko: 'AI Agent 기반 1인 창업 프로그램 100인 선정',
+      en: 'Selected — Top 100, AI Agent-Based Solo Founder Program',
+    },
     event: {
       ko: '2026 KAIST OverEdge(오엣) · KAIST 창업원 · KAIST AI 대학원',
       en: '2026 KAIST OverEdge · KAIST Startup Center · KAIST AI Graduate School',
-    },
-    work: {
-      ko: '「서점초단편」 — 한국 초단편소설 AI 큐레이션·완독 습관 플랫폼',
-      en: '"Bookstore Flash Fiction" — AI curation platform building a reading habit around Korean flash fiction',
     },
   },
   {

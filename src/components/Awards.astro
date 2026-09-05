@@ -22,7 +22,7 @@ const tr = t(lang);
           <div class="body">
             <p class="prize">{a.prize[lang]}</p>
             <p class="event">{a.event[lang]}</p>
-            <p class="work">{a.work[lang]}</p>
+            {a.work && <p class="work">{a.work[lang]}</p>}
           </div>
         </li>
       ))}
