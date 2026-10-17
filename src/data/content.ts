@@ -122,6 +122,7 @@ export const research: {
       en: 'Developed a way to measure how strongly words associate with colors from large-scale web images, validated on the world’s top 100 brands and color symbolism in 20th-century Anglo-American poetry.',
     },
     tags: ['Multimodal', 'Computer Vision', 'Computational Humanities'],
+    href: 'https://doi.org/10.1371/journal.pone.0360407',
   },
   {
     title: {
