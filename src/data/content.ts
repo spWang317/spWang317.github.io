@@ -358,8 +358,8 @@ export const presentations: {
   },
   {
     term: '2024.01',
-    title: 'Ddancing Ppongsa: XR Collaborative Dance Game',
-    authors: 'S. A. Bae, K. Kim, Sungpil Wang, W. Woo',
+    title: '땐싱뽕사: XR 협동 댄스 게임',
+    authors: '배선아, 김기락, 왕성필, 우운택',
     venue: 'HCI Korea 2024, Gangwon',
     kind: { ko: '학술대회 논문', en: 'Conference Paper' },
   },

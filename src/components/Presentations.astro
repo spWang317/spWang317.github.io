@@ -7,8 +7,8 @@ interface Props { lang: Locale; }
 const { lang } = Astro.props;
 const tr = t(lang);
 
-// 저자 문자열에서 본인 이름만 굵게
-const ME = 'Sungpil Wang';
+// 저자 문자열에서 본인 이름만 굵게 (국문 논문은 한글 이름)
+const meOf = (authors: string) => (authors.includes('왕성필') ? '왕성필' : 'Sungpil Wang');
 ---
 
 <section id="presentations">
@@ -26,8 +26,8 @@ const ME = 'Sungpil Wang';
             <span class="badge">{p.kind[lang]}</span>
             <p class="title">{p.title}</p>
             <p class="authors">
-              {p.authors.split(ME).map((part, j) => (
-                <>{j > 0 && <strong>{ME}</strong>}{part}</>
+              {p.authors.split(meOf(p.authors)).map((part, j) => (
+                <>{j > 0 && <strong>{meOf(p.authors)}</strong>}{part}</>
               ))}
             </p>
             <p class="venue">{p.venue}</p>
