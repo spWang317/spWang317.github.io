@@ -352,7 +352,7 @@ export const presentations: {
   {
     term: '2024.04',
     title: "The Network of Republic of Korea's Legal Code",
-    authors: 'H. Kim, Dongju Park, Sungpil Wang et al.',
+    authors: 'Halla Kim, Dongju Park, Sungpil Wang et al.',
     venue: 'CompleNet 2024, Exeter',
     kind: { ko: '포스터', en: 'Poster' },
   },
