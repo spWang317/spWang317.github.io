@@ -89,7 +89,7 @@ export const ui = {
     'contact.body': 'Open to collaborations, talks, and advisory work.',
     'contact.email': 'Send an email',
     'theme.toggle': 'Toggle theme',
-    'lang.label': '한국어',
+    'lang.label': 'KR',
     'footer.built': 'Built with Astro · ',
     'skip': 'Skip to content',
   },

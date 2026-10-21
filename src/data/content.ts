@@ -341,7 +341,19 @@ export const presentations: {
   authors: string;
   venue: string;
   kind: L;
+  ledTo?: { label: L; href: string }; // 이 발표가 발전한 논문
 }[] = [
+  {
+    term: '2024.12',
+    title: 'Quantitative Framework for Word-Color Association and Application to 20th Century Anglo-American Poetry',
+    authors: 'Sungpil Wang, Juyong Park',
+    venue: 'Computational Humanities Research (CHR) 2024, Aarhus',
+    kind: { ko: '구두 발표 (Long)', en: 'Long Presentation' },
+    ledTo: {
+      label: { ko: 'PLOS ONE (2026) 논문으로 발전', en: 'Developed into PLOS ONE (2026)' },
+      href: 'https://doi.org/10.1371/journal.pone.0360407',
+    },
+  },
   {
     term: '2024.06',
     title: 'Understanding Congruous-Conflicting Relationships in Legal Citations via Signed Network Analysis',
@@ -369,6 +381,17 @@ export const presentations: {
     authors: 'Sungpil Wang, Juyong Park',
     venue: 'Complex Networks & Their Applications 2023, Menton',
     kind: { ko: '포스터', en: 'Poster' },
+  },
+  {
+    term: '2023.07',
+    title: 'Color–Word Matching Analysis of Color Images in Literature',
+    authors: 'Sungpil Wang, Juyong Park',
+    venue: 'NetSci 2023, Vienna',
+    kind: { ko: '포스터', en: 'Poster' },
+    ledTo: {
+      label: { ko: 'PLOS ONE (2026) 논문으로 발전', en: 'Developed into PLOS ONE (2026)' },
+      href: 'https://doi.org/10.1371/journal.pone.0360407',
+    },
   },
   {
     term: '2022.07',
