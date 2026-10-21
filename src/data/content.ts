@@ -56,6 +56,7 @@ export const research: {
   summary: L;
   tags: string[];
   href?: string;
+  presented?: string[]; // 선행 학회 발표 (카드 아래 작은 글씨)
 }[] = [
   {
     title: {
@@ -123,6 +124,10 @@ export const research: {
     },
     tags: ['Multimodal', 'Computer Vision', 'Computational Humanities'],
     href: 'https://doi.org/10.1371/journal.pone.0360407',
+    presented: [
+      'CHR 2024, Aarhus · Long Presentation',
+      'NetSci 2023, Vienna · Poster',
+    ],
   },
   {
     title: {
@@ -328,6 +333,58 @@ export const awards: {
 // 논문 목록은 research/publications.yaml 에서 자동 생성됩니다.
 // 내용을 고치려면 그 파일을 수정한 뒤 `python3 sync.py` 를 실행하세요.
 export { publications, type Publication } from './publications.generated';
+
+// ── 학회 발표 (시간 순, 최신부터) ──────────────────────────────
+export const presentations: {
+  term: string;
+  title: string;
+  authors: string;
+  venue: string;
+  kind: L;
+}[] = [
+  {
+    term: '2024.06',
+    title: 'Understanding Congruous-Conflicting Relationships in Legal Citations via Signed Network Analysis',
+    authors: 'Dongju Park, Sungpil Wang et al.',
+    venue: 'NetSci 2024, Quebec',
+    kind: { ko: '포스터', en: 'Poster' },
+  },
+  {
+    term: '2024.04',
+    title: "The Network of Republic of Korea's Legal Code",
+    authors: 'H. Kim, Dongju Park, Sungpil Wang et al.',
+    venue: 'CompleNet 2024, Exeter',
+    kind: { ko: '포스터', en: 'Poster' },
+  },
+  {
+    term: '2024.01',
+    title: 'Ddancing Ppongsa: XR Collaborative Dance Game',
+    authors: 'S. A. Bae, K. Kim, Sungpil Wang, W. Woo',
+    venue: 'HCI Korea 2024, Gangwon',
+    kind: { ko: '학술대회 논문', en: 'Conference Paper' },
+  },
+  {
+    term: '2023.11',
+    title: 'Network Analysis of 21st-Century Korean Prose Poetry',
+    authors: 'Sungpil Wang, Juyong Park',
+    venue: 'Complex Networks & Their Applications 2023, Menton',
+    kind: { ko: '포스터', en: 'Poster' },
+  },
+  {
+    term: '2022.07',
+    title: "Quantitative Understanding of the Evolution of Seo Jeong-Ju's Poetic World",
+    authors: 'Sungpil Wang, Juyong Park',
+    venue: 'Digital Humanities 2022 (ADHO), Tokyo',
+    kind: { ko: '구두 발표 (Short)', en: 'Short Presentation' },
+  },
+  {
+    term: '2021.05',
+    title: 'How the Death-themed Game Spiritfarer Can Help Players Cope with the Loss of a Loved One',
+    authors: 'Karam Eum, Valérie Erb, Subin Lin, Sungpil Wang, Young Yim Doh',
+    venue: 'CHI 2021 Extended Abstracts',
+    kind: { ko: '확장 초록', en: 'Extended Abstract' },
+  },
+];
 
 // ── 강의 · 강연 (시간 순, 최신부터) ──────────────────────────────
 export const teaching: {

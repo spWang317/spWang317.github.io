@@ -28,6 +28,12 @@ const tr = t(lang);
           >
             <h3>{r.title[lang]}</h3>
             <p>{r.summary[lang]}</p>
+            {r.presented && (
+              <div class="presented">
+                <span class="presented-label">{tr('research.presented')}</span>
+                {r.presented.map((x) => <span>{x}</span>)}
+              </div>
+            )}
             <div class="tags">
               {r.tags.map((tg) => <span class="chip">{tg}</span>)}
             </div>
@@ -40,6 +46,16 @@ const tr = t(lang);
 
 <style>
   .sec-research { background: var(--bg-alt); }
+  .presented {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    font-size: 0.8rem;
+    color: var(--muted);
+    margin: 10px 0 12px;
+    line-height: 1.45;
+  }
+  .presented-label { font-weight: 700; font-size: 0.72rem; letter-spacing: 0.02em; }
   .grid {
     display: grid;
     gap: 18px;
