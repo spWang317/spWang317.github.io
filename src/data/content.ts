@@ -153,6 +153,17 @@ export const research: {
   },
   {
     title: {
+      ko: '생성 AI와 한국 산문시',
+      en: 'Generative AI and Korean Prose Poetry',
+    },
+    summary: {
+      ko: '여러 생성 AI 시스템이 쓴 한국어 산문시를 사람의 작품과 비교해, 다루는 소재가 어떻게 달라지는지 측정했습니다.',
+      en: 'Compared Korean prose poems written by several generative AI systems with human-written ones to measure how their subject matter differs.',
+    },
+    tags: ['Generative AI', 'Computational Humanities', 'Poetry'],
+  },
+  {
+    title: {
       ko: '서정주 시세계의 변화: 키워드·토픽·감성',
       en: "Evolution of Seo Jeong-Ju's Poetic World",
     },
