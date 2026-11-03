@@ -21,16 +21,17 @@ const tr = t(lang);
           <div class="term">{a.term[lang]}</div>
           <div class="body">
             <p class="prize">{a.prize[lang]}</p>
-            <p class="event">
-              {a.url ? (
-                <a class="ext" href={a.url} target="_blank" rel="noopener">{a.event[lang]} <span aria-hidden="true">↗</span></a>
-              ) : a.event[lang]}
-            </p>
+            <p class="event">{a.event[lang]}</p>
             {a.work && <p class="work">{a.work[lang]}</p>}
             {a.proof && (
-              <button type="button" class="proof-btn" data-dialog={`proof-${i}`}>
-                {lang === 'ko' ? '수상 발표 보기' : 'View announcement'}
+              <button type="button" class="led proof-btn" data-dialog={`proof-${i}`}>
+                → {lang === 'ko' ? '수상 발표 보기' : 'View announcement'}
               </button>
+            )}
+            {a.url && (
+              <a class="led" href={a.url} target="_blank" rel="noopener">
+                → {lang === 'ko' ? '홈페이지 보기' : 'Visit website'}
+              </a>
             )}
           </div>
           {a.proof && (
@@ -116,8 +117,6 @@ const tr = t(lang);
     font-size: 0.88rem;
     margin-top: 4px;
   }
-  .ext { color: inherit; text-decoration: none; border-bottom: 1px solid var(--border); transition: color .2s, border-color .2s; }
-  .ext:hover { color: var(--accent); border-color: var(--accent); }
   .work {
     color: var(--muted);
     font-size: 0.92rem;
@@ -125,20 +124,21 @@ const tr = t(lang);
     line-height: 1.55;
   }
 
-  .proof-btn {
-    margin-top: 10px;
+  .led {
+    display: inline-block;
     font: inherit;
     font-size: 0.82rem;
     font-weight: 600;
     color: var(--accent);
-    background: var(--accent-soft);
-    border: 1px solid transparent;
-    border-radius: 999px;
-    padding: 5px 12px;
+    background: none;
+    border: 0;
+    padding: 0;
+    margin-top: 6px;
     cursor: pointer;
-    transition: border-color .2s;
+    text-decoration: none;
   }
-  .proof-btn:hover { border-color: var(--accent); }
+  .led:hover { text-decoration: underline; }
+  .led + .led { margin-left: 16px; }
 
   .proof {
     border: 1px solid var(--border);
