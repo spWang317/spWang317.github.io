@@ -21,7 +21,11 @@ const tr = t(lang);
           <div class="term">{a.term[lang]}</div>
           <div class="body">
             <p class="prize">{a.prize[lang]}</p>
-            <p class="event">{a.event[lang]}</p>
+            <p class="event">
+              {a.url ? (
+                <a class="ext" href={a.url} target="_blank" rel="noopener">{a.event[lang]} <span aria-hidden="true">↗</span></a>
+              ) : a.event[lang]}
+            </p>
             {a.work && <p class="work">{a.work[lang]}</p>}
             {a.proof && (
               <button type="button" class="proof-btn" data-dialog={`proof-${i}`}>
@@ -112,6 +116,8 @@ const tr = t(lang);
     font-size: 0.88rem;
     margin-top: 4px;
   }
+  .ext { color: inherit; text-decoration: none; border-bottom: 1px solid var(--border); transition: color .2s, border-color .2s; }
+  .ext:hover { color: var(--accent); border-color: var(--accent); }
   .work {
     color: var(--muted);
     font-size: 0.92rem;

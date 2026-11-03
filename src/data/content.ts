@@ -286,6 +286,7 @@ export const awards: {
   term: L;
   prize: L;
   event: L;
+  url?: string;
   work?: L;
   // 상장이 없는 수상의 공식 발표 요약 — 버튼을 누르면 팝업으로 뜬다
   proof?: {
@@ -397,6 +398,7 @@ export const awards: {
       ko: '2026 KAIST OverEdge(오엣) · KAIST 창업원 · KAIST AI 대학원',
       en: '2026 KAIST OverEdge · KAIST Startup Center · KAIST AI Graduate School',
     },
+    url: 'https://www.kaist-overedge.com/',
   },
   {
     term: { ko: '2019.08', en: '2019.08' },
