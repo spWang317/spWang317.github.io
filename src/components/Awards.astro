@@ -23,12 +23,48 @@ const tr = t(lang);
             <p class="prize">{a.prize[lang]}</p>
             <p class="event">{a.event[lang]}</p>
             {a.work && <p class="work">{a.work[lang]}</p>}
+            {a.proof && (
+              <button type="button" class="proof-btn" data-dialog={`proof-${i}`}>
+                {lang === 'ko' ? '수상 발표 보기' : 'View announcement'}
+              </button>
+            )}
           </div>
+          {a.proof && (
+            <dialog class="proof" id={`proof-${i}`} aria-labelledby={`proof-${i}-h`}>
+              <div class="sheet">
+                <header>
+                  <p class="issuer">{a.proof.issuer[lang]} · {a.proof.date}</p>
+                  <h3 id={`proof-${i}-h`}>{a.proof.heading[lang]}</h3>
+                </header>
+                <dl>
+                  {a.proof.rows.map((r) => (
+                    <div class="kv">
+                      <dt>{r.k[lang]}</dt>
+                      <dd>{r.v[lang]}</dd>
+                    </div>
+                  ))}
+                </dl>
+                <p class="note">{a.proof.note[lang]}</p>
+                <form method="dialog">
+                  <button class="close">{lang === 'ko' ? '닫기' : 'Close'}</button>
+                </form>
+              </div>
+            </dialog>
+          )}
         </li>
       ))}
     </ol>
   </div>
 </section>
+
+<script>
+  document.querySelectorAll<HTMLButtonElement>('.proof-btn').forEach((b) => {
+    const d = document.getElementById(b.dataset.dialog!) as HTMLDialogElement | null;
+    if (!d) return;
+    b.addEventListener('click', () => d.showModal());
+    d.addEventListener('click', (e) => { if (e.target === d) d.close(); });
+  });
+</script>
 
 <style>
   .list { list-style: none; display: flex; flex-direction: column; }
@@ -63,6 +99,65 @@ const tr = t(lang);
     margin-top: 7px;
     line-height: 1.55;
   }
+
+  .proof-btn {
+    margin-top: 10px;
+    font: inherit;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--accent);
+    background: var(--accent-soft);
+    border: 1px solid transparent;
+    border-radius: 999px;
+    padding: 5px 12px;
+    cursor: pointer;
+    transition: border-color .2s;
+  }
+  .proof-btn:hover { border-color: var(--accent); }
+
+  .proof {
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 0;
+    position: fixed;
+    inset: 0;
+    margin: auto;
+    height: fit-content;
+    max-height: calc(100dvh - 32px);
+    overflow: auto;
+    width: min(520px, calc(100vw - 32px));
+    background: var(--surface);
+    color: var(--text);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.25);
+  }
+  .proof::backdrop { background: rgba(10, 12, 18, 0.55); backdrop-filter: blur(2px); }
+  .sheet { padding: 28px 28px 22px; }
+  .issuer { color: var(--accent); font-size: 0.8rem; font-weight: 650; letter-spacing: 0.02em; }
+  .proof h3 { font-size: 1.08rem; line-height: 1.45; margin-top: 6px; letter-spacing: -0.01em; }
+  .proof dl { margin-top: 20px; border-top: 1px solid var(--border); }
+  .kv {
+    display: grid;
+    grid-template-columns: 96px 1fr;
+    gap: 16px;
+    padding: 11px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.92rem;
+  }
+  .kv dt { color: var(--muted); }
+  .kv dd { margin: 0; font-weight: 550; }
+  .note { color: var(--muted); font-size: 0.8rem; line-height: 1.55; margin-top: 14px; }
+  .proof form { display: flex; justify-content: flex-end; margin-top: 18px; }
+  .close {
+    font: inherit;
+    font-size: 0.85rem;
+    color: var(--text);
+    background: var(--bg-alt);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 6px 16px;
+    cursor: pointer;
+  }
+  .close:hover { border-color: var(--accent); }
 
   @media (max-width: 620px) {
     .row { grid-template-columns: 1fr; gap: 4px; }

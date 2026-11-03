@@ -287,6 +287,14 @@ export const awards: {
   prize: L;
   event: L;
   work?: L;
+  // 상장이 없는 수상의 공식 발표 요약 — 버튼을 누르면 팝업으로 뜬다
+  proof?: {
+    heading: L;
+    issuer: L;
+    date: string;
+    rows: { k: L; v: L }[];
+    note: L;
+  };
 }[] = [
   {
     term: { ko: '2026.08', en: '2026.08' },
@@ -310,6 +318,29 @@ export const awards: {
     work: {
       ko: '「거절당하지 못한 논문들」 — 융합 연구가 제출처를 찾지 못하는 실패에 관한 에세이 (기획주제: 미래와 실패)',
       en: '"Papers That Could Not Even Be Rejected" — an essay on interdisciplinary work that cannot find a venue (theme: Future and Failure)',
+    },
+    proof: {
+      heading: {
+        ko: '[수상작 발표] 실패연구소 2026 KAISTian 실패 에세이 공모전',
+        en: 'Award announcement — 2026 KAISTian Failure Essay Contest',
+      },
+      issuer: { ko: 'KAIST 실패연구소', en: 'KAIST Center for Ambitious Failure' },
+      date: '2026-08-24',
+      rows: [
+        { k: { ko: '구분', en: 'Award' }, v: { ko: '대상 (1명)', en: 'Grand Prize (1 awardee)' } },
+        { k: { ko: '수상자', en: 'Awardee' }, v: { ko: '왕성필', en: 'Sungpil Wang' } },
+        {
+          k: { ko: '작품명', en: 'Work' },
+          v: { ko: '거절당하지 못한 논문들', en: 'Papers That Could Not Even Be Rejected (거절당하지 못한 논문들)' },
+        },
+        { k: { ko: '기획주제', en: 'Theme' }, v: { ko: '미래와 실패', en: 'Future and Failure' } },
+        { k: { ko: '시상 내역', en: 'Prize' }, v: { ko: '상금 50만 원', en: 'KRW 500,000' } },
+        { k: { ko: '시상 구성', en: 'Awards given' }, v: { ko: '대상 1 · 우수상 10 · 노력상 5', en: 'Grand Prize 1 · Excellence 10 · Merit 5' } },
+      ],
+      note: {
+        ko: '별도 상장 없이 KAIST 포털 공지사항으로 발표되었습니다(2026-08-24, 실패연구소 게시, 학내 로그인 필요).',
+        en: 'Announced on the KAIST portal notice board (Aug 24, 2026, posted by the Center for Ambitious Failure; campus login required). No separate certificate was issued.',
+      },
     },
   },
   {
