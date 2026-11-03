@@ -31,11 +31,17 @@ const tr = t(lang);
           </div>
           {a.proof && (
             <dialog class="proof" id={`proof-${i}`} aria-labelledby={`proof-${i}-h`}>
-              <div class="sheet">
+              <div class="sheet" tabindex="-1" autofocus>
                 <header>
                   <p class="issuer">{a.proof.issuer[lang]} · {a.proof.date}</p>
                   <h3 id={`proof-${i}-h`}>{a.proof.heading[lang]}</h3>
                 </header>
+                {a.proof.image && (
+                  <figure class="shot">
+                    <img src={a.proof.image.src} alt={a.proof.image.alt[lang]} loading="lazy" decoding="async" />
+                    <figcaption>{lang === 'ko' ? '공지 원문의 수상작 표' : 'Winners table from the original notice (Korean)'}</figcaption>
+                  </figure>
+                )}
                 <dl>
                   {a.proof.rows.map((r) => (
                     <div class="kv">
@@ -61,7 +67,7 @@ const tr = t(lang);
   document.querySelectorAll<HTMLButtonElement>('.proof-btn').forEach((b) => {
     const d = document.getElementById(b.dataset.dialog!) as HTMLDialogElement | null;
     if (!d) return;
-    b.addEventListener('click', () => d.showModal());
+    b.addEventListener('click', () => { d.showModal(); d.scrollTop = 0; });
     d.addEventListener('click', (e) => { if (e.target === d) d.close(); });
   });
 </script>
@@ -125,15 +131,25 @@ const tr = t(lang);
     height: fit-content;
     max-height: calc(100dvh - 32px);
     overflow: auto;
-    width: min(520px, calc(100vw - 32px));
+    width: min(620px, calc(100vw - 32px));
     background: var(--surface);
     color: var(--text);
     box-shadow: 0 24px 60px rgba(0, 0, 0, 0.25);
   }
   .proof::backdrop { background: rgba(10, 12, 18, 0.55); backdrop-filter: blur(2px); }
-  .sheet { padding: 28px 28px 22px; }
+  .sheet { padding: 28px 28px 22px; outline: none; }
   .issuer { color: var(--accent); font-size: 0.8rem; font-weight: 650; letter-spacing: 0.02em; }
   .proof h3 { font-size: 1.08rem; line-height: 1.45; margin-top: 6px; letter-spacing: -0.01em; }
+  .shot { margin: 18px 0 0; }
+  .shot img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: #fff;
+  }
+  .shot figcaption { color: var(--muted); font-size: 0.76rem; margin-top: 6px; text-align: right; }
   .proof dl { margin-top: 20px; border-top: 1px solid var(--border); }
   .kv {
     display: grid;

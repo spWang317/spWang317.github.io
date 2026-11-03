@@ -292,6 +292,7 @@ export const awards: {
     heading: L;
     issuer: L;
     date: string;
+    image?: { src: string; alt: L };
     rows: { k: L; v: L }[];
     note: L;
   };
@@ -326,6 +327,13 @@ export const awards: {
       },
       issuer: { ko: 'KAIST 실패연구소', en: 'KAIST Center for Ambitious Failure' },
       date: '2026-08-24',
+      image: {
+        src: '/awards/failure-essay-2026.png',
+        alt: {
+          ko: '실패연구소 공지의 수상작 표: 대상 왕*필 「거절당하지 못한 논문들」, 우수상 10명, 노력상 5명',
+          en: 'Winners table from the official notice: Grand Prize — "거절당하지 못한 논문들"; 10 Excellence and 5 Merit awards',
+        },
+      },
       rows: [
         { k: { ko: '구분', en: 'Award' }, v: { ko: '대상 (1명)', en: 'Grand Prize (1 awardee)' } },
         { k: { ko: '수상자', en: 'Awardee' }, v: { ko: '왕성필', en: 'Sungpil Wang' } },
@@ -335,7 +343,6 @@ export const awards: {
         },
         { k: { ko: '기획주제', en: 'Theme' }, v: { ko: '미래와 실패', en: 'Future and Failure' } },
         { k: { ko: '시상 내역', en: 'Prize' }, v: { ko: '상금 50만 원', en: 'KRW 500,000' } },
-        { k: { ko: '시상 구성', en: 'Awards given' }, v: { ko: '대상 1 · 우수상 10 · 노력상 5', en: 'Grand Prize 1 · Excellence 10 · Merit 5' } },
       ],
       note: {
         ko: '별도 상장 없이 KAIST 포털 공지사항으로 발표되었습니다(2026-08-24, 실패연구소 게시, 학내 로그인 필요).',
