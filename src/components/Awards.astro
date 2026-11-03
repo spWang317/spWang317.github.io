@@ -42,6 +42,16 @@ const tr = t(lang);
                     <figcaption>{lang === 'ko' ? '공지 원문의 수상작 표' : 'Winners table from the original notice (Korean)'}</figcaption>
                   </figure>
                 )}
+                {a.proof.stats && (
+                  <ul class="stats">
+                    {a.proof.stats.map((st) => (
+                      <li>
+                        <span class="num">{st.num}</span>
+                        <span class="lbl">{st.label[lang]}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
                 <dl>
                   {a.proof.rows.map((r) => (
                     <div class="kv">
@@ -51,6 +61,9 @@ const tr = t(lang);
                   ))}
                 </dl>
                 <p class="note">{a.proof.note[lang]}</p>
+                {a.proof.link && (
+                  <a class="src" href={a.proof.link.href} target="_blank" rel="noopener">{a.proof.link.label[lang]} ↗</a>
+                )}
                 <form method="dialog">
                   <button class="close">{lang === 'ko' ? '닫기' : 'Close'}</button>
                 </form>
@@ -150,6 +163,39 @@ const tr = t(lang);
     background: #fff;
   }
   .shot figcaption { color: var(--muted); font-size: 0.76rem; margin-top: 6px; text-align: right; }
+  .stats {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 20px;
+  }
+  .stats li {
+    background: var(--bg-alt);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 14px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .stats .num {
+    font-size: 1.7rem;
+    font-weight: 750;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    font-variant-numeric: tabular-nums;
+  }
+  .stats li:last-child .num { color: var(--accent); }
+  .stats .lbl { color: var(--muted); font-size: 0.78rem; line-height: 1.35; }
+  .src {
+    display: inline-block;
+    margin-top: 8px;
+    font-size: 0.8rem;
+    color: var(--accent);
+    text-decoration: none;
+  }
+  .src:hover { text-decoration: underline; }
   .proof dl { margin-top: 20px; border-top: 1px solid var(--border); }
   .kv {
     display: grid;

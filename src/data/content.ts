@@ -293,8 +293,10 @@ export const awards: {
     issuer: L;
     date: string;
     image?: { src: string; alt: L };
+    stats?: { num: string; label: L }[];
     rows: { k: L; v: L }[];
     note: L;
+    link?: { href: string; label: L };
   };
 }[] = [
   {
@@ -307,6 +309,41 @@ export const awards: {
     work: {
       ko: '「예술의 정의에서 AI를 지운 대가」 — AI 협업 예술의 이분법적 라벨링이 초래할 실패의 사전 분석(Pre-Mortem)',
       en: '"The Cost of Erasing AI from the Definition of Art" — a pre-mortem of failures caused by binary AI labeling of hybrid art',
+    },
+    proof: {
+      heading: {
+        ko: '2026 KAIST AI×실패 아이디어 공모전 「미래에서 온 오답노트」',
+        en: '2026 KAIST AI×Failure Idea Competition — "Wrong-Answer Notes from the Future"',
+      },
+      issuer: { ko: 'KAIST 실패연구소', en: 'KAIST Center for Ambitious Failure' },
+      date: '2026-08-21',
+      // 상장 스캔 받으면 여기에 추가: image: { src: '/awards/ai-failure-2026.png', alt: {...} },
+      stats: [
+        { num: '482', label: { ko: '접수 제안서', en: 'proposals submitted' } },
+        { num: '12', label: { ko: '본선 진출 (40.2:1)', en: 'finalists (40.2:1)' } },
+        { num: '1', label: { ko: '대상 (482:1)', en: 'Grand Prize (482:1)' } },
+      ],
+      rows: [
+        { k: { ko: '수상', en: 'Award' }, v: { ko: '대상 · KAIST 총장상', en: "Grand Prize · KAIST President's Award" } },
+        { k: { ko: '수상자', en: 'Awardee' }, v: { ko: '왕성필 (개인)', en: 'Sungpil Wang (individual)' } },
+        {
+          k: { ko: '작품명', en: 'Work' },
+          v: { ko: '예술의 정의에서 AI를 지운 대가', en: 'The Cost of Erasing AI from the Definition of Art' },
+        },
+        { k: { ko: '상금', en: 'Prize' }, v: { ko: '300만 원', en: 'KRW 3,000,000' } },
+        {
+          k: { ko: '본선', en: 'Final round' },
+          v: { ko: '2026-08-21 · KAIST 학술문화관 존해너홀 · 5분 공개 발표', en: 'Aug 21, 2026 · KAIST · 5-minute public presentation' },
+        },
+      ],
+      note: {
+        ko: '2036년, AI가 일상이 된 사회의 실패를 상상하고 그 원인을 거꾸로 추적하는 공모전.',
+        en: 'A competition to imagine failures of 2036, when AI is part of everyday life, and trace their causes backward.',
+      },
+      link: {
+        href: 'https://caf.kaist.ac.kr/boards/view/board_notice/975',
+        label: { ko: '본선 진출 공지 (실패연구소)', en: 'Finalist announcement (KAIST CAF)' },
+      },
     },
   },
   {
