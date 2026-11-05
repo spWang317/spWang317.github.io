@@ -68,6 +68,7 @@ export const research: {
       en: 'Analyzed the sentence-level flow of meaning in Korean flash fiction to reveal five narrative types and a recurring pattern of stories breaking and then leaping forward.',
     },
     tags: ['Narrative Analysis', 'NLP', 'Literature'],
+    href: 'https://doi.org/10.1016/j.physa.2026.132224',
   },
   {
     title: {
