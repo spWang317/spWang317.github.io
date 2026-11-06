@@ -289,12 +289,12 @@ export const awards: {
   event: L;
   url?: string;
   work?: L;
-  // 상장이 없는 수상의 공식 발표 요약 — 버튼을 누르면 팝업으로 뜬다
+  // 수상의 상장·공식 발표 요약 — 버튼을 누르면 팝업으로 뜬다
   proof?: {
     heading: L;
     issuer: L;
     date: string;
-    image?: { src: string; alt: L };
+    image?: { src: string; alt: L; caption: L };
     stats?: { num: string; label: L }[];
     rows: { k: L; v: L }[];
     note: L;
@@ -319,7 +319,14 @@ export const awards: {
       },
       issuer: { ko: 'KAIST 실패연구소', en: 'KAIST Center for Ambitious Failure' },
       date: '2026-08-21',
-      // 상장 스캔 받으면 여기에 추가: image: { src: '/awards/ai-failure-2026.png', alt: {...} },
+      image: {
+        src: '/awards/ai-failure-2026.png',
+        alt: {
+          ko: '상장: 2026년 AI×실패 아이디어 공모전 대상, KAIST 왕성필, 2026년 8월 21일, KAIST 총장',
+          en: "Award certificate: Grand Prize, 2026 AI×Failure Idea Competition, Sungpil Wang, Aug 21, 2026, issued by the President of KAIST",
+        },
+        caption: { ko: 'KAIST 총장 명의 상장 (제2026-72호)', en: 'Certificate from the President of KAIST (No. 2026-72, Korean)' },
+      },
       stats: [
         { num: '482', label: { ko: '접수 제안서', en: 'proposals submitted' } },
         { num: '12', label: { ko: '본선 진출 (40.2:1)', en: 'finalists (40.2:1)' } },
@@ -372,6 +379,7 @@ export const awards: {
           ko: '실패연구소 공지의 수상작 표: 대상 왕*필 「거절당하지 못한 논문들」, 우수상 10명, 노력상 5명',
           en: 'Winners table from the official notice: Grand Prize — "거절당하지 못한 논문들"; 10 Excellence and 5 Merit awards',
         },
+        caption: { ko: '공지 원문의 수상작 표', en: 'Winners table from the original notice (Korean)' },
       },
       rows: [
         { k: { ko: '구분', en: 'Award' }, v: { ko: '대상 (1명)', en: 'Grand Prize (1 awardee)' } },

@@ -44,7 +44,7 @@ const tr = t(lang);
                 {a.proof.image && (
                   <figure class="shot">
                     <img src={a.proof.image.src} alt={a.proof.image.alt[lang]} loading="lazy" decoding="async" />
-                    <figcaption>{lang === 'ko' ? '공지 원문의 수상작 표' : 'Winners table from the original notice (Korean)'}</figcaption>
+                    <figcaption>{a.proof.image.caption[lang]}</figcaption>
                   </figure>
                 )}
                 {a.proof.stats && (
